@@ -42,16 +42,16 @@ function updateCart() {
 
 
 //this is where we do the receipt thing
-function clickPurchase() {
-    alert('Thank you for your purchase!')
-    let menuItem = document.getElementsByClassName('menu-item')[0]
-    while (menuItem.hasChildNodes()) {
-        menuItem.removeChild(menuItem.firstChild)
-    }
-    cartArr = [];
-    totalPrice = 0;
-    totalCost();
-}
+// function clickPurchase() {
+//     alert('Thank you for your purchase!')
+//     let menuItem = document.getElementsByClassName('menu-item')[0]
+//     while (menuItem.hasChildNodes()) {
+//         menuItem.removeChild(menuItem.firstChild)
+//     }
+//     cartArr = [];
+//     totalPrice = 0;
+//     totalCost();
+// }
 
 function changeQuantity() {
     let cartQuantityInput = document.getElementsByClassName("cart-quantity-input")

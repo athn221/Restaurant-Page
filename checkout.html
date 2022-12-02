@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/style.css">
+    <title>working title</title>
+</head>
+
+<body>
+    <section class=" section-checkout">
+        <div class="row">
+            <h2>Checkout</h2>
+        </div>
+        <div class="checkout-container">
+            <div class="col">
+                <form action="#" method="post" id="checkout-form">
+                    <div class="row">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="name" placeholder="Your name" required>
+                    </div>
+                    <div class="row">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="email" placeholder="Your email" required>
+                    </div>
+                    <div class="row">
+                        <label for="street">Street</label>
+                        <input type="text" name="street" class="street" placeholder="Your street" required>
+                    </div>
+                    <div class="row">
+                        <label for="city">City</label>
+                        <input type="text" name="city" class="city" placeholder="Your city" required>
+                    </div>
+                    <div class="row">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" name="zip" class="zip" placeholder="Your zip code" required>
+                    </div>
+                    <div class="row">
+                        <h3>Payment Method</h3>
+                        <div>
+                            <label>
+                                <input type="radio" name="payment-method" value="card">
+                                Debit/Credit Card
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="payment-method" value="cash" checked>
+                                Cash on Delivery
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="resources/cart.js"></script>
+    <script src="resources/index.js"></script>
+</body>
+
+</html>

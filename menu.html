@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/style.css">
+    <link rel="stylesheet" href="resources/grid.css">
+    <title>Lɛ RESTAURäN</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div>
+                <a href="#">Home</a>
+                <a href="#">Menu</a>
+                <a href="#">Reservations</a>
+                <a href="#">ABCXYZ</a>
+                <a href="#">DEFUVW</a>
+            </div>
+        </div>
+
+        <div class="user-cart">
+            <button id="btn-cart" onclick="shoppingCart()"><ion-icon class="icon-cart" name="cart-outline"></ion-icon></button>
+            <div class="shopping-cart" id="cart"">
+                <div class="menu-item">
+                    <img src="resources/images/burger-img.png" alt="" class="menu-pic">
+                    <button class="menu-btn">
+                        <h3 class="menu-name">burger</h3>
+                    </button>
+                    <span class="menu-price">$52.99</span>
+                    <input class="cart-quantity-input" type="number" value="2">
+                    <button class="BTN-REMOVE" type="button">REMOVE</button>
+                </div>
+                <div class="cart-total"> 
+                    <strong class="cart-tax-title">Tax</strong>
+                    <span class="cart-total-tax">6%</span>
+                    <br>
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">$105.98</span>
+                </div>
+                <button class="btn btn-primary btn-purchase" onclick="clickPurchase()" type="button">Check Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="menu-sect">
+
+        <div class="menu-container grid-container">
+            <div class="menu-item">
+                <img src="resources/images/burger-img.png" alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">burger</h3>
+                </button>
+                <span class="menu-price">$52.99</span>
+                <button class="BTN-ADD" onclick="addItem(['burger', 52.99, 'resources/images/burger-img.png', 1])" type="button">ADD TO CART</button>
+            </div>
+            <div class="menu-item">
+                <img src="resources/images/fry-img.png"
+                    alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">fry</h3>
+                </button>
+                <span class="menu-price">$50.99</span>
+                <button class="BTN-ADD" onclick="addItem(['fry', 50.99, 'resources/images/fry-img.png', 1])" type="button">ADD TO CART</button>
+            </div>
+            <div class="menu-item">
+                <img src="resources/images/lemonade-img"
+                    alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">lemonade</h3>
+                </button>
+                <span class="menu-price">$52.99</span>
+                <button class="BTN-ADD" onclick="addItem(['lemonade', 52.99, 'resources/images/lemonade-img', 1])" type="button">ADD TO CART</button>
+            </div>
+            <div class="menu-item">
+                <img src="resources/images/apple-img.png"
+                    alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">apple</h3>
+                </button>
+                <span class="menu-price">$52.99</span>
+                <button class="BTN-ADD" onclick="addItem(['apple', 52.99, 'resources/images/apple-img.png', 1])" type="button">ADD TO CART</button>
+            </div>
+            <div class="menu-item">
+                <img src="resources/images/straw-img"
+                    alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">straw</h3>
+                </button>
+                <span class="menu-price">$52.99</span>
+                <button class="BTN-ADD" onclick="addItem(['straw', 52.99, 'resources/images/straw-img', 1])" type="button">ADD TO CART</button>
+            </div>
+            <div class="menu-item">
+                <img src="resources/images/burger-img.png" alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">burger</h3>
+                </button>
+                <span class="menu-price">$52.99</span>
+                <button class="BTN-ADD" onclick="addItem(['burger', 52.99, 'resources/images/burger-img.png', 1])" type="button">ADD TO CART</button>
+            </div>
+            <div class="menu-item">
+                <img src= "resources/images/cheese-img.avif"
+                    alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">cheese</h3>
+                </button>
+                <span class="menu-price">$12.99</span>
+                <button class="BTN-ADD" onclick="addItem(['cheese', 12.99, 'resources/images/cheese-img.avif', 1])" type="button">ADD TO CART</button>
+            </div>
+            <div class="menu-item">
+                <img src="resources/images/burger-img.png" alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">burger with cheese</h3>
+                </button>
+                <span class="menu-price">$52.99</span>
+                <button class="BTN-ADD" onclick="addItem(['burger with cheese', 52.99, 'resources/images/burger-img.png', 1])" type="button">ADD TO CART</button>
+            </div>
+            <div class="menu-item">
+                <img src="resources/images/burger-img.png" alt="" class="menu-pic">
+                <button class="menu-btn">
+                    <h3 class="menu-name">big burger</h3>
+                </button>
+                <span class="menu-price">$52.99</span>
+                <button class="BTN-ADD" onclick="addItem(['big burger', 52.99, 'resources/images/burger-img.png', 1])" type="button">ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-columns">
+            <!-- not sure if the design will be the same, just doing the template rn. all subject to change -->
+            <div class="footer-nav-bar">
+                <a href="#">Contact</a>
+                <a href="#">Rating</a>
+                <a href="#">ABCXYZ</a>
+                <a href="#">DEFUVW</a>
+                <a href="#">GHIRST</a>
+            </div>
+        </div>
+
+        <div class="footer-columns">
+            <div class="footer-social-media-links">
+                <a class="fb" href=""><ion-icon class="icons-social" name="logo-facebook"></ion-icon></a>
+                <a class="twt" href=""><ion-icon class="icons-social" name="logo-twitter"></ion-icon></a>
+                <a class="gp" href=""><ion-icon class="icons-social" name="logo-google"></ion-icon></a>
+                <a class="ig" href=""><ion-icon class="icons-social" name="logo-instagram"></ion-icon></a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="resources/index.js"></script>
+</body>
+
+</html>

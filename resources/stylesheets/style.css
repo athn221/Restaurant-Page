@@ -1,5 +1,195 @@
+/* ---------- Global ---------- */
+
+:root {
+
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+
+
+/* ---------- Elements ---------- */
+
+a {
+    text-decoration: none;
+}
+
+
+
+/* ---------- Header ---------- */
+
+
+
+
+
+/* ---------- Navbar ---------- */
+
+nav {
+    width: 100%;
+    display: flex;
+    place-content: center;
+}
+
+#btn-cart {
+    border-style: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.icon-cart {
+    font-size: 300%;
+}
+
+.shopping-cart {
+    display: none;
+}
+
+.sliding-cart {
+    height: 500px;
+    width: 300px;
+    background-color: rgb(250, 248, 248);
+    animation: slide-in .5s both;
+    z-index: 10;
+}
+
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    display: flex;
+    place-content: center;
+    background-color: #252627;
+}
+
+.fb:link {
+    color: #004773;
+}
+
+.fb:visited {
+    color: #004773;
+}
+
+.fb:hover {
+    color: #0068a9;
+    transition: .2s;
+}
+
+.fb:active {
+    color: #0068a9;
+}
+
+.twt:link {
+    color: #1DA1F2;
+}
+
+.twt:visited {
+    color: #1DA1F2;
+}
+
+.twt:hover {
+    color: #63c3ff;
+    transition: .2s;
+}
+
+.twt:active {
+    color: #63c3ff;
+}
+
+.gp:link {
+    color: #ae1100;
+    transition: .2s;
+}
+
+.gp:visited {
+    color: #ae1100;
+}
+
+.gp:hover {
+    color: #f01800;
+    transition: .2s;
+}
+
+.gp:active {
+    color: #f01800;
+}
+
+.ig:link {
+    color: #c90072;
+    transition: .2s;
+}
+
+.ig:visited {
+    color: #c90072;
+}
+
+.ig:hover {
+    color: #fffa70;
+    transition: .2s;
+}
+
+.ig:active {
+    color: #fffa70;
+}
+
+
+
+/* ---------- Menu ---------- */
+
+.menu-container {
+    margin: 200px
+}
+
+.menu-item {
+    height: 300px;
+    background: var(--clr-4);
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+    border: 4px solid var(--clr-1);
+    box-shadow: inset 0 0 5px var(--clr-1), 0 0 5px var(--clr-1);
+}
+
+.menu-item > * {
+    margin: auto;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.menu-price {
+    font-size: 25px;
+}
+
+.menu-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 20px;
+    transition: 600ms;
+}
+
+.menu-btn:hover {
+    background-color: rgb(171 160 123);
+}
+
+
+
+/* ---------- About ---------- */
+
+
+

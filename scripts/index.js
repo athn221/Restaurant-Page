@@ -40,19 +40,6 @@ function updateCart() {
     totalCost()
 }
 
-
-//this is where we do the receipt thing
-// function clickPurchase() {
-//     alert('Thank you for your purchase!')
-//     let menuItem = document.getElementsByClassName('menu-item')[0]
-//     while (menuItem.hasChildNodes()) {
-//         menuItem.removeChild(menuItem.firstChild)
-//     }
-//     cartArr = [];
-//     totalPrice = 0;
-//     totalCost();
-// }
-
 function changeQuantity() {
     let cartQuantityInput = document.getElementsByClassName("cart-quantity-input")
     for (i = 0; i < cartQuantityInput.length; i++) {
@@ -77,13 +64,6 @@ function totalCost() {
     return price.innerHTML = "$" + parseFloat(totalPrice).toFixed(2)
 }
 
-// function totalTax() {
-//     for (i = 0; i < cartArr.length; i++) {
-//         let taxPrice = cartArr[i][1]*.06
-//     }
-//     return tax.innerHTML = "$" + parseFloat(taxPrice).toFixed(2)
-// }
-
 function addItem(arr) {
     check = false;
     for (i = 0; i < cartArr.length; i++) {
@@ -96,6 +76,7 @@ function addItem(arr) {
     } else {
         cartArr.push(arr)
         updateCart()
+        alert("Item added")
     }
 }
 
@@ -109,6 +90,50 @@ function removeItem(item) {
     }   
 }
 
-
-
 updateCart()
+
+
+
+/* ---------- Login Signup ---------- */
+
+function signup() {
+    // let email = document.getElementById("email").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let passwordconfirm = document.getElementById("password-confirm").value;
+
+    // redundant w next part
+    // var user = {
+    //     email: email,
+    //     username: username,
+    //     password: password,
+    // };
+
+    if (passwordconfirm == password) {
+        // localStorage.setItem("email", email);
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+    } else {
+        alert("Passwords don't match")
+    }
+}
+
+function login() {
+    // let email = document.getElementById("email").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    // let emailValue = localStorage.getItem("email", email);
+    let usernameValue = localStorage.getItem("username");
+    let passwordValue = localStorage.getItem("password");
+
+    console.log(usernameValue)
+    console.log(passwordValue)
+
+    if (usernameValue == username && passwordValue == password) {
+        alert("test")
+        window.location.href = "menu.html"
+    } else {
+        alert("no")
+    }
+}

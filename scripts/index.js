@@ -160,3 +160,22 @@ function adminMenu() {
 }
 
 adminMenu()
+
+
+
+// ---------- Menu ---------- //
+
+
+// laying out the menu item template
+const menuItemTemplate = document.createElement('div');
+menuItemTemplate.innerHTML = `
+<div class="menu-details">
+    <h3 class="menu-name"></h3>
+    <span class="menu-description"></span>
+</div>
+<div class="menu-tag">
+    <span class="menu-price"></span>
+    <button class="BTN-ADD" onclick="">ADD TO CART</button>
+</div>
+`;
+menuItemTemplate.classList.add('menu-item');

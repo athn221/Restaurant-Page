@@ -263,3 +263,26 @@ img {
 
 
 
+
+
+/* ---------- Login Sign up ---------- */
+
+form {
+    background-color: rgb(249, 249, 249);
+    width: 500px;
+    height: 300px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.login, .signup {
+    width: fit-content;
+}
+
+input {
+    width: 300px;
+}

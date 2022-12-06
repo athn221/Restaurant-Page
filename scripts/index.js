@@ -146,13 +146,11 @@ function login() {
 
 /* ---------- Admin Login ---------- */
 
-// let items = [['burger', 1], ['fry', 50.99, 'images/fry-img.png', 1], ['lemonade', 52.99, 'images/lemonade-img', 1], ['apple', 52.99, 'images/apple-img.png', 1], ['straw', 52.99, 'images/straw-img', 1],['burger', 52.99, 'images/burger-img.png', 1], ['cheese', 12.99, 'images/cheese-img.avif', 1], ['burger with cheese', 52.99, 'images/burger-img.png', 1], ['big burger', 52.99, 'images/burger-img.png', 1]]
-// console.log(items)
+let items = [['sushi 1', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 2', 50.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 3', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 4', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 5', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 6', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 7', 12.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 8', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['big sushi', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1]]
 
-// localStorage.setItem("items", JSON.stringify(items))
+localStorage.setItem("items", JSON.stringify(items))
 
-// let itemStorage = JSON.parse(localStorage.getItem("items"))
-// console.log(itemStorage)
+let itemStorage = JSON.parse(localStorage.getItem("items"))
 
 
 function adminMenu() {

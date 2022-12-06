@@ -76,8 +76,8 @@ nav {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 
@@ -223,19 +223,25 @@ footer {
 /* ---------- Menu ---------- */
 
 .menu-container {
-    margin: 200px;
+    margin: 100px;
 }
 
 .menu-item {
-    
-}
-
-.menu-item > * {
-    
+    padding: 20px 30px;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h3 {
     font-size: 30px;
+}
+
+.menu-tag {
+    display: flex;
+    place-items: center;
+    gap: 20px;
 }
 
 .menu-price {

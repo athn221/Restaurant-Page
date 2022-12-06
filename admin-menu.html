@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/stylesheets/style.css">
     <!-- <link rel="stylesheet" href="resources/grid.css"> -->
-    <title>Customer Menu</title>
+    <title>Admin Menu</title>
 </head>
 
 <body>
@@ -22,9 +22,9 @@
             </div>
         </div>
 
-        <div class="user-cart">
+        <!-- <div class="user-cart">
             <button id="btn-cart" onclick="shoppingCart()"><ion-icon class="icon-cart" name="cart-outline"></ion-icon></button>
-            <div class="shopping-cart" id="cart"">
+            <div class="shopping-cart" id="cart""> -->
                 <div class="menu-item">
                     <img src="images/burger-img.png" alt="" class="menu-pic">
                     <button class="menu-btn">
@@ -34,7 +34,7 @@
                     <input class="cart-quantity-input" type="number" value="2">
                     <button class="BTN-REMOVE" type="button">REMOVE</button>
                 </div>
-                <div class="cart-total"> 
+                <!-- <div class="cart-total"> 
                     <strong class="cart-tax-title">Tax</strong>
                     <span class="cart-total-tax">6%</span>
                     <br>
@@ -43,19 +43,20 @@
                 </div>
                 <a href="checkout.html">Checkout</a>
             </div>
-        </div>
+        </div> -->
     </nav>
 
     <section class="menu-sect">
 
-        <div class="menu-container grid-container" id="menu-container-id">
-            <!-- <div class="menu-item">
+        <div class="menu-container grid-container">
+            <div class="menu-item">
                 <img src="images/burger-img.png" alt="" class="menu-pic">
                 <button class="menu-btn">
                     <h3 class="menu-name">burger</h3>
                 </button>
                 <span class="menu-price">$52.99</span>
                 <button class="BTN-ADD" onclick="addItem(['burger', 52.99, 'images/burger-img.png', 1])" type="button">ADD TO CART</button>
+                <button class="btn-remove" id="food-item-1">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <img src="images/fry-img.png"
@@ -65,6 +66,7 @@
                 </button>
                 <span class="menu-price">$50.99</span>
                 <button class="BTN-ADD" onclick="addItem(['fry', 50.99, 'images/fry-img.png', 1])" type="button">ADD TO CART</button>
+                <button class="btn-remove" id="food-item-2">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <img src="images/lemonade-img"
@@ -74,6 +76,7 @@
                 </button>
                 <span class="menu-price">$52.99</span>
                 <button class="BTN-ADD" onclick="addItem(['lemonade', 52.99, 'images/lemonade-img', 1])" type="button">ADD TO CART</button>
+                <button class="btn-remove" id="food-item-3">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <img src="images/apple-img.png"
@@ -83,6 +86,7 @@
                 </button>
                 <span class="menu-price">$52.99</span>
                 <button class="BTN-ADD" onclick="addItem(['apple', 52.99, 'images/apple-img.png', 1])" type="button">ADD TO CART</button>
+                <button class="btn-remove" id="food-item-4">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <img src="images/straw-img"
@@ -92,6 +96,7 @@
                 </button>
                 <span class="menu-price">$52.99</span>
                 <button class="BTN-ADD" onclick="addItem(['straw', 52.99, 'images/straw-img', 1])" type="button">ADD TO CART</button>
+                <button class="btn-remove" id="food-item-5">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <img src="images/burger-img.png" alt="" class="menu-pic">
@@ -100,6 +105,7 @@
                 </button>
                 <span class="menu-price">$52.99</span>
                 <button class="BTN-ADD" onclick="addItem(['burger', 52.99, 'images/burger-img.png', 1])" type="button">ADD TO CART</button>
+                <button class="btn-remove" id="food-item-6">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <img src= "images/cheese-img.avif"
@@ -109,6 +115,7 @@
                 </button>
                 <span class="menu-price">$12.99</span>
                 <button class="BTN-ADD" onclick="addItem(['cheese', 12.99, 'images/cheese-img.avif', 1])" type="button">ADD TO CART</button>
+                <button class="btn-remove" id="food-item-7">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <img src="images/burger-img.png" alt="" class="menu-pic">
@@ -117,6 +124,7 @@
                 </button>
                 <span class="menu-price">$52.99</span>
                 <button class="BTN-ADD" onclick="addItem(['burger with cheese', 52.99, 'images/burger-img.png', 1])" type="button">ADD TO CART</button>
+                <button class="btn-remove" id="food-item-8">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <img src="images/burger-img.png" alt="" class="menu-pic">
@@ -125,7 +133,8 @@
                 </button>
                 <span class="menu-price">$52.99</span>
                 <button class="BTN-ADD" onclick="addItem(['big burger', 52.99, 'images/burger-img.png', 1])" type="button">ADD TO CART</button>
-            </div> -->
+                <button class="btn-remove" id="food-item-9">Remove item from Menu</button>
+            </div>
         </div>
     </section>
 

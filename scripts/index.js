@@ -168,13 +168,10 @@ function adminMenu() {
                 <span class="menu-price">$${itemStorage[i][1]}</span>
                 <button class="BTN-ADD" onclick='addItem(${i})'>ADD TO CART</button>
             </div>
-            <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
         </div>
         `
     }
 }
-
-//what does line 171 do shuold i change that to remove item frmo menu and then make a function to remove items
 //still need to do a function to add items lololol and then we done and then we can work on styling and whatnot, est time thursday ish. must css this weekend ez.
 
 adminMenu()

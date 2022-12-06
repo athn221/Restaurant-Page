@@ -82,6 +82,7 @@ function addItem(item) {
 }
 
 function removeItem(item) {
+    //old function that i am nervous about deleting, will clean up later
     // for (i = 0; i < cartArr.length; i++) {
     //     if (cartArr[i][0] == item) {
     //         cartArr.splice(i, 1)
@@ -100,20 +101,11 @@ updateCart()
 /* ---------- Login Signup ---------- */
 
 function signup() {
-    // let email = document.getElementById("email").value;
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     let passwordconfirm = document.getElementById("password-confirm").value;
 
-    // redundant w next part
-    // var user = {
-    //     email: email,
-    //     username: username,
-    //     password: password,
-    // };
-
     if (passwordconfirm == password) {
-        // localStorage.setItem("email", email);
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
     } else {
@@ -122,11 +114,9 @@ function signup() {
 }
 
 function login() {
-    // let email = document.getElementById("email").value;
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    // let emailValue = localStorage.getItem("email", email);
     let usernameCustomer = localStorage.getItem("username");
     let passwordCustomer = localStorage.getItem("password");
 
@@ -146,16 +136,6 @@ function login() {
 
 /* ---------- Admin Login ---------- */
 
-// let firstItem = ['burger', 52.99, 'images/burger-img.png', 1]
-// let secondItem = ['fry', 50.99, 'images/fry-img.png', 1]
-// let thirdItem = ['lemonade', 52.99, 'images/lemonade-img', 1]
-// let fourthItem = ['apple', 52.99, 'images/apple-img.png', 1]
-// let fifthItem = ['straw', 52.99, 'images/straw-img', 1]
-// let sixthItem = ['burger', 52.99, 'images/burger-img.png', 1]
-// let seventhItem = ['cheese', 12.99, 'images/cheese-img.avif', 1]
-// let eighthItem = ['burger with cheese', 52.99, 'images/burger-img.png', 1]
-// let ninthItem = ['big burger', 52.99, 'images/burger-img.png', 1]
-
 let items = [['burger', 52.99, 'images/burger-img.png', 1], ['fry', 50.99, 'images/fry-img.png', 1], ['lemonade', 52.99, 'images/lemonade-img', 1], ['apple', 52.99, 'images/apple-img.png', 1], ['straw', 52.99, 'images/straw-img', 1],['burger', 52.99, 'images/burger-img.png', 1], ['cheese', 12.99, 'images/cheese-img.avif', 1], ['burger with cheese', 52.99, 'images/burger-img.png', 1], ['big burger', 52.99, 'images/burger-img.png', 1]]
 console.log(items)
 
@@ -169,10 +149,6 @@ function adminMenu() {
     let menuContainer = document.getElementById("menu-container-id")
     menuContainer.innerHTML = ""
     for (i = 0; i < itemStorage.length; i++) {
-        // let item = String(itemStorage[i]);
-        // let temp = new Array();
-        // temp = item.split(',');
-        // console.log(temp)
         menuContainer.innerHTML += `
         <div class="menu-item" id="menu-item-id">
             <img src="${itemStorage[i][2]}" alt="" class="menu-pic">

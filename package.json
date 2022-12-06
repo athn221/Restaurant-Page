@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mononokayy/120-2.0/issues"
   },
-  "homepage": "https://github.com/mononokayy/120-2.0#readme"
+  "homepage": "https://github.com/mononokayy/120-2.0#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
 }

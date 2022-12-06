@@ -22,7 +22,7 @@
 
 html,
 body {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
 }
 
@@ -140,7 +140,7 @@ header a:hover {
 /* ---------- Footer ---------- */
 
 footer {
-    position:absolute;
+    /* position:absolute; */
     bottom: 0;
     width: 100%;
     display: flex;
@@ -246,14 +246,6 @@ h3 {
 
 .menu-price {
     font-size: 25px;
-}
-
-.menu-btn {
-    
-}
-
-.menu-btn:hover {
-    
 }
 
 

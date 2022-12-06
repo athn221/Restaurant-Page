@@ -19,26 +19,44 @@ function shoppingCart() {
     }
 }
 
+// 0 - name
+// 1 - price
+// 2 - description
+// 3 - quantity selector
+
 function updateCart() {
     menuItem.innerHTML = ""
     totalPrice = 0
     for (i = 0; i < cartArr.length; i++) {
         menuItem.innerHTML += `
-        <div class="menu-item-container" id="menu-container-id">
-            <div class="menu-item">
-                <img src="${cartArr[i][2]}" alt="" class="menu-pic">
-                <button class="menu-btn">
-                    <h3 class="menu-name">${cartArr[i][0]}</h3>
-                </button> 
-                <span class="menu-price">$${cartArr[i][1]}</span>
-                <input class="cart-quantity-input" onchange="changeQuantity()" type="number" value='${cartArr[i][3]}'>
-                <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
+
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3 class="menu-name">${cartArr[i][0]}</h3>
+                <span class="menu-description">${cartArr[i][2]}</span>
             </div>
+            <div class="menu-tag">
+                <span class="menu-price">$${cartArr[i][1]}</span>
+                <button class="BTN-ADD" onclick="">ADD TO CART</button>
+            </div>
+            <input class="cart-quantity-input" onchange="changeQuantity()" type="number" value='${cartArr[i][3]}'>
         </div>
         `
     }
     totalCost()
 }
+
+// {/* <div class="menu-item-container" id="menu-container-id">
+// <div class="menu-item">
+//     <img src="${cartArr[i][2]}" alt="" class="menu-pic">
+//     <button class="menu-btn">
+//         <h3 class="menu-name">${cartArr[i][0]}</h3>
+//     </button> 
+//     <span class="menu-price">$${cartArr[i][1]}</span>
+//     <input class="cart-quantity-input" onchange="changeQuantity()" type="number" value='${cartArr[i][3]}'>
+//     <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
+// </div>
+// </div> */}
 
 function changeQuantity() {
     let cartQuantityInput = document.getElementsByClassName("cart-quantity-input")
@@ -81,15 +99,7 @@ function addItem(item) {
     }
 }
 
-function removeItem(item) {
-    //old function that i am nervous about deleting, will clean up later
-    // for (i = 0; i < cartArr.length; i++) {
-    //     if (cartArr[i][0] == item) {
-    //         cartArr.splice(i, 1)
-    //         updateCart()
-    //         break;
-    //     }
-    // }   
+function removeItem(item) { 
     cartArr.splice(item,1)
     updateCart()
 }
@@ -147,20 +157,26 @@ function login() {
 
 function adminMenu() {
     let menuContainer = document.getElementById("menu-container-id")
-    // menuContainer.innerHTML = ""
+    menuContainer.innerHTML = ""
     for (i = 0; i < itemStorage.length; i++) {
         menuContainer.innerHTML += `
-        <div class="menu-item" id="menu-item-id">
-            <h3 class="menu-name">${itemStorage[i][0]}</h3>
-            <span class="menu-price">$${itemStorage[i][1]}</span>
-            <button class="BTN-ADD" onclick='addItem(${i})' type="button">ADD TO CART</button>
+
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3 class="menu-name">${itemStorage[i][0]}</h3>
+                <span class="menu-description">${itemStorage[i][2]}</span>
+            </div>
+            <div class="menu-tag">
+                <span class="menu-price">$${itemStorage[i][1]}</span>
+                <button class="BTN-ADD" onclick='addItem(${i})'>ADD TO CART</button>
+            </div>
+            <button class="btn-remove">Remove item from Menu</button>
         </div>
         `
     }
 }
 
 adminMenu()
-
 
 
 // ---------- Menu ---------- //

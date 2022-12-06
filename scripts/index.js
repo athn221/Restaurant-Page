@@ -37,9 +37,9 @@ function updateCart() {
             </div>
             <div class="menu-tag">
                 <span class="menu-price">$${cartArr[i][1]}</span>
-                <button class="BTN-ADD" onclick="">ADD TO CART</button>
             </div>
             <input class="cart-quantity-input" onchange="changeQuantity()" type="number" value='${cartArr[i][3]}'>
+            <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
         </div>
         `
     }
@@ -168,11 +168,14 @@ function adminMenu() {
                 <span class="menu-price">$${itemStorage[i][1]}</span>
                 <button class="BTN-ADD" onclick='addItem(${i})'>ADD TO CART</button>
             </div>
-            <button class="btn-remove">Remove item from Menu</button>
+            <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
         </div>
         `
     }
 }
+
+//what does line 171 do shuold i change that to remove item frmo menu and then make a function to remove items
+//still need to do a function to add items lololol and then we done and then we can work on styling and whatnot, est time thursday ish. must css this weekend ez.
 
 adminMenu()
 

@@ -136,25 +136,22 @@ function login() {
 
 /* ---------- Admin Login ---------- */
 
-let items = [['burger', 52.99, 'images/burger-img.png', 1], ['fry', 50.99, 'images/fry-img.png', 1], ['lemonade', 52.99, 'images/lemonade-img', 1], ['apple', 52.99, 'images/apple-img.png', 1], ['straw', 52.99, 'images/straw-img', 1],['burger', 52.99, 'images/burger-img.png', 1], ['cheese', 12.99, 'images/cheese-img.avif', 1], ['burger with cheese', 52.99, 'images/burger-img.png', 1], ['big burger', 52.99, 'images/burger-img.png', 1]]
-console.log(items)
+// let items = [['burger', 1], ['fry', 50.99, 'images/fry-img.png', 1], ['lemonade', 52.99, 'images/lemonade-img', 1], ['apple', 52.99, 'images/apple-img.png', 1], ['straw', 52.99, 'images/straw-img', 1],['burger', 52.99, 'images/burger-img.png', 1], ['cheese', 12.99, 'images/cheese-img.avif', 1], ['burger with cheese', 52.99, 'images/burger-img.png', 1], ['big burger', 52.99, 'images/burger-img.png', 1]]
+// console.log(items)
 
-localStorage.setItem("items", JSON.stringify(items))
+// localStorage.setItem("items", JSON.stringify(items))
 
-let itemStorage = JSON.parse(localStorage.getItem("items"))
-console.log(itemStorage)
+// let itemStorage = JSON.parse(localStorage.getItem("items"))
+// console.log(itemStorage)
 
 
 function adminMenu() {
     let menuContainer = document.getElementById("menu-container-id")
-    menuContainer.innerHTML = ""
+    // menuContainer.innerHTML = ""
     for (i = 0; i < itemStorage.length; i++) {
         menuContainer.innerHTML += `
         <div class="menu-item" id="menu-item-id">
-            <img src="${itemStorage[i][2]}" alt="" class="menu-pic">
-            <button class="menu-btn">
-                <h3 class="menu-name">${itemStorage[i][0]}</h3>
-            </button>
+            <h3 class="menu-name">${itemStorage[i][0]}</h3>
             <span class="menu-price">$${itemStorage[i][1]}</span>
             <button class="BTN-ADD" onclick='addItem(${i})' type="button">ADD TO CART</button>
         </div>
@@ -163,3 +160,22 @@ function adminMenu() {
 }
 
 adminMenu()
+
+
+
+// ---------- Menu ---------- //
+
+
+// laying out the menu item template
+const menuItemTemplate = document.createElement('div');
+menuItemTemplate.innerHTML = `
+<div class="menu-details">
+    <h3 class="menu-name"></h3>
+    <span class="menu-description"></span>
+</div>
+<div class="menu-tag">
+    <span class="menu-price"></span>
+    <button class="BTN-ADD" onclick="">ADD TO CART</button>
+</div>
+`;
+menuItemTemplate.classList.add('menu-item');

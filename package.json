@@ -1,19 +1,23 @@
 {
   "name": "120-2.0",
   "version": "1.0.0",
-  "description": "Let's try this again",
+  "description": "Let's try this again.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mononokayy/120-2.0.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mononokayy/120-2.0/issues"
   },
-  "homepage": "https://github.com/mononokayy/120-2.0#readme"
+  "homepage": "https://github.com/mononokayy/120-2.0#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
 }

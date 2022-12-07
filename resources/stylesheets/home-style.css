@@ -1,0 +1,50 @@
+/* ---------- Reset ---------- */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+
+
+/* ---------- Nav ---------- */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 1em 10%;
+}
+
+.nav-links button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    background-color: transparent;
+    transition: 500ms ease-in-out;
+}
+
+.nav-links button:hover {
+    background-color: #c2d6ff;
+    box-shadow: 0 0 4px #b1caff;
+}
+
+
+
+/* ---------- Nav ---------- */
+

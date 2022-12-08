@@ -37,8 +37,8 @@ function updateCart() {
     menuItem.innerHTML = ""
     totalPrice = 0
     for (i = 0; i < cartArr.length; i++) {
-        menuItem.innerHTML += `
-
+        menuItem.innerHTML += 
+        `
         <div class="menu-item">
             <div class="menu-details">
                 <h3 class="menu-name">${cartArr[i][0]}</h3>
@@ -127,15 +127,13 @@ function signup() {
 }
 
 function login() {
-    let email = document.getElementById("email").value;
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    let emailCustomer = localStorage.getItem("email");
     let usernameCustomer = localStorage.getItem("username");
     let passwordCustomer = localStorage.getItem("password");
 
-    if (usernameCustomer == username || emailCustomer == email && passwordCustomer == password) {
+    if (usernameCustomer == username && passwordCustomer == password) {
         alert("Nice")
         window.location.href = "menu.html"
     } else if (username === "admin" &&  password === "admin") {
@@ -185,7 +183,7 @@ function adminRemoveItems() {
 
 function adminAddItems() { 
     let inputName = document.getElementById("input-name").value
-    let inputPrice = document.getElementById("input-price").value
+    let inputPrice = parseInt(document.getElementById("input-price").value)
     let inputDescription = document.getElementById("input-description").value
     let newItemArr = [inputName, inputPrice, inputDescription]
 

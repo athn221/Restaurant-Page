@@ -106,7 +106,10 @@ updateCart()
 
 /* ---------- Login Signup + Admin Login Signup ---------- */
 
+
+// this is just setting up some login stuff for the email
 function signup() {
+    let email = document.getElementById("email").value;
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     let passwordconfirm = document.getElementById("password-confirm").value;
@@ -124,13 +127,15 @@ function signup() {
 }
 
 function login() {
+    let email = document.getElementById("email").value;
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
+    let emailCustomer = localStorage.getItem("email");
     let usernameCustomer = localStorage.getItem("username");
     let passwordCustomer = localStorage.getItem("password");
 
-    if (usernameCustomer == username && passwordCustomer == password) {
+    if (usernameCustomer == username || emailCustomer == email && passwordCustomer == password) {
         alert("Nice")
         window.location.href = "menu.html"
     } else if (username === "admin" &&  password === "admin") {

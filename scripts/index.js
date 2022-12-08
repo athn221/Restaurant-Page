@@ -10,8 +10,7 @@ let price = document.getElementsByClassName("cart-total-price")[0]
 let tax = document.getElementsByClassName("cart-total-tax")
 
 let items = [['sushi 1', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 2', 50.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 3', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 4', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 5', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 6', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 7', 12.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 8', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['big sushi', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1]]
-
-if (localStorage.getItem("items") !== null) {
+if (localStorage.getItem("items") === null) {
     localStorage.setItem("items", JSON.stringify(items))
 }
 
@@ -56,18 +55,6 @@ function updateCart() {
     totalCost()
 }
 
-// {/* <div class="menu-item-container" id="menu-container-id">
-// <div class="menu-item">
-//     <img src="${cartArr[i][2]}" alt="" class="menu-pic">
-//     <button class="menu-btn">
-//         <h3 class="menu-name">${cartArr[i][0]}</h3>
-//     </button> 
-//     <span class="menu-price">$${cartArr[i][1]}</span>
-//     <input class="cart-quantity-input" onchange="changeQuantity()" type="number" value='${cartArr[i][3]}'>
-//     <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
-// </div>
-// </div> */}
-
 function changeQuantity() {
     let cartQuantityInput = document.getElementsByClassName("cart-quantity-input")
     for (i = 0; i < cartQuantityInput.length; i++) {
@@ -103,7 +90,6 @@ function addItem(item) {
         alert("Item is in cart!")
     } else {
         cartArr.push(itemStorage[item])
-        console.log(cartArr)
         updateCart()
         alert("Item added")
     }
@@ -144,9 +130,6 @@ function login() {
     let usernameCustomer = localStorage.getItem("username");
     let passwordCustomer = localStorage.getItem("password");
 
-    console.log(usernameCustomer)
-    console.log(passwordCustomer)
-
     if (usernameCustomer == username && passwordCustomer == password) {
         alert("Nice")
         window.location.href = "menu.html"
@@ -179,6 +162,7 @@ function adminMenu() {
         </div>
         `
     }
+
 }
 
 function adminRemoveItems() {
@@ -187,12 +171,10 @@ function adminRemoveItems() {
     for (i=0;i<length;i++) {
         if (itemStorage[i][0] === itemNameInput) {
             itemStorage.splice(i, 1)
-            console.log(i)
         }
     }
     localStorage.setItem("items", JSON.stringify(itemStorage))
     itemStorage = JSON.parse(localStorage.getItem("items"))
-    console.log(itemStorage)
     adminMenu()
 }
 
@@ -203,26 +185,8 @@ function adminAddItems() {
     let newItemArr = [inputName, inputPrice, inputDescription]
 
     itemStorage.unshift(newItemArr)
+    localStorage.setItem("items", JSON.stringify(itemStorage))
     adminMenu()
 }
 
 adminMenu()
-
-
-
-// ---------- Menu ---------- //
-
-
-// laying out the menu item template
-// const menuItemTemplate = document.createElement('div');
-// menuItemTemplate.innerHTML = `
-// <div class="menu-details">
-//     <h3 class="menu-name"></h3>
-//     <span class="menu-description"></span>
-// </div>
-// <div class="menu-tag">
-//     <span class="menu-price"></span>
-//     <button class="BTN-ADD" onclick="">ADD TO CART</button>
-// </div>
-// `;
-// menuItemTemplate.classList.add('menu-item');

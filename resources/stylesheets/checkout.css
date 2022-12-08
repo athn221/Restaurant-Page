@@ -1,0 +1,34 @@
+/* ---------- Reset ---------- */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    line-height: 3.5em;
+}
+
+p {
+    color: initial;
+}
+
+/* ---------- Checkout ---------- */
+
+.checkout-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 100px 10%;
+    width: 80%;
+    height: 80%;
+
+}

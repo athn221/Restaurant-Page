@@ -5,53 +5,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/style.css">
-    <title>working title</title>
+    <link rel="stylesheet" href="resources/stylesheets/style.css">
+    <link rel="stylesheet" href="resources/stylesheets/checkout.css">
+    <title>Checkout Baka</title>
 </head>
 
 <body>
-    <section class=" section-checkout">
+    <section class="section-checkout">
         <div class="row">
             <h2>Checkout</h2>
         </div>
         <div class="checkout-container">
             <div class="col">
-                <form action="#" method="post" id="checkout-form">
-                    <div class="row">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" class="name" placeholder="Your name" required>
+                <div class="row">
+                    <p>Almost there! Just a few small details <br>so we can start your order</p>
+                </div>
+                <div class="row">
+                    <h3>Payment Method</h3>
+                    <div>
+                        <label>
+                            <input type="radio" name="payment-method" value="card" checked>
+                            Debit/Credit Card
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="payment-method" value="cash">
+                            Cash
+                        </label>
                     </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h3>Order Summary</h3>
+                </div>
+                <div class="cart-contents">
+                    
+                </div>
+                <div class="checkout-totals">
                     <div class="row">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" class="email" placeholder="Your email" required>
-                    </div>
-                    <div class="row">
-                        <label for="street">Street</label>
-                        <input type="text" name="street" class="street" placeholder="Your street" required>
-                    </div>
-                    <div class="row">
-                        <label for="city">City</label>
-                        <input type="text" name="city" class="city" placeholder="Your city" required>
-                    </div>
-                    <div class="row">
-                        <label for="zip">Zip Code</label>
-                        <input type="text" name="zip" class="zip" placeholder="Your zip code" required>
-                    </div>
-                    <div class="row">
-                        <h3>Payment Method</h3>
-                        <div>
-                            <label>
-                                <input type="radio" name="payment-method" value="card">
-                                Debit/Credit Card
-                            </label>
-                            <br>
-                            <label>
-                                <input type="radio" name="payment-method" value="cash" checked>
-                                Cash on Delivery
-                            </label>
+                        <div class="col">
+                            <p>Subtotal</p>
+                        </div>
+                        <div class="col">
+                            <p class="subtotal"></p>
                         </div>
                     </div>
-                </form>
+                    <div class="row">
+                        <div class="col">
+                            <p>Tax</p>
+                        </div>
+                        <div class="col">
+                            <p class="tax"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>Total</p>
+                        </div>
+                        <div class="col">
+                            <p class="total"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="checkout-btn">Checkout</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

@@ -65,7 +65,7 @@ nav {
 
 .sliding-cart {
     position: absolute;
-    height: 50%;
+    height: 75%;
     width: 25%;
     background-color: rgb(250, 248, 248);
     animation: slide-in .5s both;

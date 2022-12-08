@@ -14,46 +14,33 @@
         <div class="navbar">
             <div>
                 <a href="#">Home</a>
-                <a href="#">Menu</a>
+                <a href="admin-menu.html">Menu</a>
                 <a href="#">Reservations</a>
                 <a href="#">ABCXYZ</a>
-                <a href="#">DEFUVW</a>
+                <a href="login.html">Admin Sign Out</a>
             </div>
         </div>
-
-        <!-- <div class="user-cart">
-            <button id="btn-cart" onclick="shoppingCart()">
-                <ion-icon class="icon-cart" name="cart-outline"></ion-icon>
-            </button>
-            <div class="shopping-cart" id="cart""> -->
                 
-                <div class="menu-item">
-                    <div class="menu-details">
-                        <h3 class="menu-name">sushi 1</h3>
-                        <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                    </div>
-                    <div class="menu-tag">
-                        <span class="menu-price">$52.99</span>
-                        <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                    </div>
-                    <button class="BTN-REMOVE" type="button">REMOVE</button>
+            <div class="menu-item">
+                <div class="menu-details">
+                    <h3 class="menu-name">sushi 1</h3>
+                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
                 </div>
-                
-                <!-- <input class="cart-quantity-input" type="number" value="2">
-
-                <div class="cart-total">
-                    <strong class="cart-tax-title">Tax</strong>
-                    <span class="cart-total-tax">6%</span>
-                    <br>
-                    <strong class="cart-total-title">Total</strong>
-                    <span class="cart-total-price">$105.98</span>
-                    <a href="checkout.html">Checkout</a>
+                <div class="menu-tag">
+                    <span class="menu-price">$52.99</span>
+                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
                 </div>
+                <button class="BTN-REMOVE" type="button">REMOVE</button>
             </div>
-        </div> -->
     </nav>
 
     <section class="menu-sect">
+            <input type="text" id="input-remove">
+            <button onclick="adminRemoveItems()">Remove Item</button>
+            <p>case sensitive, double click to confirm</p>
+
+            <input type="text" id="input-add">
+            <button onclick="adminAddItems()">Add Item</button>
 
         <div class="menu-container grid-container" id="menu-container-id">
             <div class="menu-item">
@@ -65,7 +52,6 @@
                     <span class="menu-price">$52.99</span>
                     <button class="BTN-ADD" onclick="addItem(['sushi 1', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <div class="menu-details">
@@ -76,7 +62,6 @@
                     <span class="menu-price">$50.99</span>
                     <button class="BTN-ADD" onclick="addItem(['sushi 2', 50.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <div class="menu-details">
@@ -87,7 +72,6 @@
                     <span class="menu-price">$52.99</span>
                     <button class="BTN-ADD" onclick="addItem(['sushi 3', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <div class="menu-details">
@@ -98,7 +82,6 @@
                     <span class="menu-price">$52.99</span>
                     <button class="BTN-ADD" onclick="addItem(['sushi 4', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <div class="menu-details">
@@ -109,7 +92,6 @@
                     <span class="menu-price">$52.99</span>
                     <button class="BTN-ADD" onclick="addItem(['sushi 5', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <div class="menu-details">
@@ -120,7 +102,6 @@
                     <span class="menu-price">$52.99</span>
                     <button class="BTN-ADD" onclick="addItem(['sushi 6', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <div class="menu-details">
@@ -131,7 +112,6 @@
                     <span class="menu-price">$12.99</span>
                     <button class="BTN-ADD" onclick="addItem(['sushi 7', 12.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <div class="menu-details">
@@ -142,7 +122,6 @@
                     <span class="menu-price">$52.99</span>
                     <button class="BTN-ADD" onclick="addItem(['sushi 8', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
             <div class="menu-item">
                 <div class="menu-details">
@@ -153,7 +132,6 @@
                     <span class="menu-price">$52.99</span>
                     <button class="BTN-ADD" onclick="addItem(['big sushi', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
                 </div>
-                <button class="btn-remove">Remove item from Menu</button>
             </div>
         </div>
     </section>

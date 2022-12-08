@@ -9,6 +9,15 @@ let menuItem = document.getElementsByClassName("menu-item")[0]
 let price = document.getElementsByClassName("cart-total-price")[0]
 let tax = document.getElementsByClassName("cart-total-tax")
 
+let items = [['sushi 1', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 2', 50.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 3', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 4', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 5', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 6', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 7', 12.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 8', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['big sushi', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1]]
+
+if (localStorage.getItem("items") !== null) {
+    localStorage.setItem("items", JSON.stringify(items))
+}
+
+let itemStorage = JSON.parse(localStorage.getItem("items"))
+
+
 function shoppingCart() {
     if (isVisible == false) {
         isVisible = true
@@ -19,6 +28,7 @@ function shoppingCart() {
     }
 }
 
+// info for the array for organiziation purposes
 // 0 - name
 // 1 - price
 // 2 - description
@@ -108,7 +118,7 @@ updateCart()
 
 
 
-/* ---------- Login Signup ---------- */
+/* ---------- Login Signup + Admin Login Signup ---------- */
 
 function signup() {
     let username = document.getElementById("username").value;
@@ -116,11 +126,15 @@ function signup() {
     let passwordconfirm = document.getElementById("password-confirm").value;
 
     if (passwordconfirm == password) {
-        localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
-    } else {
-        alert("Passwords don't match")
-    }
+        if (username == "admin") {
+            alert("no")
+        } else {
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+        }
+        } else {
+            alert("Passwords don't match")
+        }
 }
 
 function login() {
@@ -134,23 +148,17 @@ function login() {
     console.log(passwordCustomer)
 
     if (usernameCustomer == username && passwordCustomer == password) {
-        alert("test")
+        alert("Nice")
         window.location.href = "menu.html"
     } else if (username === "admin" &&  password === "admin") {
         window.location.href = "admin-menu.html"
-    } else {
+    } else { 
         alert("no")
     }
 }
 
 
-/* ---------- Admin Login ---------- */
-
-let items = [['sushi 1', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 2', 50.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 3', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 4', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 5', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 6', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 7', 12.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 8', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['big sushi', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1]]
-
-localStorage.setItem("items", JSON.stringify(items))
-
-let itemStorage = JSON.parse(localStorage.getItem("items"))
+/* ---------- Admin Editing Menu---------- */
 
 
 function adminMenu() {
@@ -172,9 +180,29 @@ function adminMenu() {
         `
     }
 }
-//still need to do a function to add items lololol and then we done and then we can work on styling and whatnot, est time thursday ish. must css this weekend ez.
+
+function adminRemoveItems() {
+    let itemNameInput = document.getElementById("input-remove").value
+    let length = itemStorage.length;
+    for (i=0;i<length;i++) {
+        if (itemStorage[i][0] === itemNameInput) {
+            itemStorage.splice(i, 1)
+            console.log(i)
+        }
+    }
+    localStorage.setItem("items", JSON.stringify(itemStorage))
+    itemStorage = JSON.parse(localStorage.getItem("items"))
+    console.log(itemStorage)
+    adminMenu()
+}
+
+function adminAddItems() { 
+    let addedItem = document.getElementById("input-add").value
+    
+}
 
 adminMenu()
+
 
 
 // ---------- Menu ---------- //

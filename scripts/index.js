@@ -197,9 +197,16 @@ function adminRemoveItems() {
 }
 
 function adminAddItems() { 
-    let addedItem = document.getElementById("input-add").value
-    
+    let inputName = document.getElementById("input-name").value
+    let inputPrice = document.getElementById("input-price").value
+    let inputDescription = document.getElementById("input-description").value
+    let newItemArr = [inputName, inputPrice, inputDescription]
+
+    itemStorage.unshift(newItemArr)
+    adminMenu()
 }
+
+function 
 
 adminMenu()
 

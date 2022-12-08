@@ -4,6 +4,8 @@
 
 } */
 
+/* i will organize this stuff later im not focusing on css yet */
+
 @keyframes slide-in {
     0% {
         transform: translateX(10px);
@@ -135,6 +137,11 @@ header a:visited {
 header a:hover {
     color: #8a8166;
     transition: .5s;
+}
+
+#div-add-items {
+    display: flex;
+    flex-direction: column;
 }
 
 /* ---------- Footer ---------- */

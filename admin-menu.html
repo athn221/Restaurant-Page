@@ -21,26 +21,37 @@
             </div>
         </div>
                 
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 1</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-                <button class="BTN-REMOVE" type="button">REMOVE</button>
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3 class="menu-name">sushi 1</h3>
+                <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
             </div>
+            <div class="menu-tag">
+                <span class="menu-price">$52.99</span>
+                <button class="BTN-ADD" onclick="">ADD TO CART</button>
+            </div>
+            <button class="BTN-REMOVE" type="button">REMOVE</button>
+        </div>
     </nav>
 
     <section class="menu-sect">
-            <input type="text" id="input-remove">
-            <button onclick="adminRemoveItems()">Remove Item</button>
-            <p>case sensitive, double click to confirm</p>
+        
+        <input type="text" id="input-remove">
+        <button onclick="adminRemoveItems()">Remove Item</button>
+        <h1>case sensitive, double click to confirm</h1>
 
-            <input type="text" id="input-add">
+        <div id="div-add-items">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="input-name">
+
+            <label for="price">Price</label>
+            <input type="text" name="price" id="input-price">
+
+            <label for="description">Description</label>
+            <input type="text" name="description" id="input-description">
+
             <button onclick="adminAddItems()">Add Item</button>
+        </div>
 
         <div class="menu-container grid-container" id="menu-container-id">
             <div class="menu-item">

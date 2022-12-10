@@ -15,7 +15,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: var(--primary-color);
-    line-height: 3.5em;
+    line-height: 2em;
 }
 
 p {
@@ -45,4 +45,39 @@ label {
 input {
     width: fit-content;
     margin-right: 10px;
+    font-size: 1.3em;
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.card-info {
+    width: 85%;
+    margin: 30px 0;
+}
+
+.payment-options {
+    margin: 60px 0;
+}
+
+.card-tip {
+    margin-top: 60px;
+}
+
+.tip-other {
+    display: flex
+}
+
+#tip-other {
+    width: 70px;
+    margin-left: 10px;
+}
+
+.checkout-totals p {
+    font-size: 1.5em;
 }

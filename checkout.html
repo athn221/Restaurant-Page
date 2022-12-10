@@ -20,14 +20,13 @@
                 <div class="row">
                     <p>Almost there! Just a few small details <br>so we can start your order</p>
                 </div>
-                <div class="row">
+                <div class="payment-options">
                     <h3>Payment Method</h3>
                     <div>
                         <label>
                             <input type="radio" name="payment-method" value="card" checked>
                             Debit/Credit Card
                         </label>
-                        <br>
                         <label>
                             <input type="radio" name="payment-method" value="cash">
                             Cash
@@ -67,11 +66,13 @@
                             <input type="radio" name="tip" value="25">
                             25%
                         </label>
-                        <label>
-                            <input type="radio" name="tip" value="other">
-                            Other
-                        </label>
-                        <input type="text" name="tip-other" id="tip-other" placeholder="$">
+                        <div class="tip-other">
+                            <label>
+                                <input type="radio" name="tip" value="other">
+                                Other
+                            </label>
+                            <input type="text" name="tip-other" id="tip-other" placeholder="$">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,7 +88,7 @@
                             <p>Subtotal</p>
                         </div>
                         <div class="col">
-                            <p class="subtotal"></p>
+                            <p class="checkout-subtotal"></p>
                         </div>
                     </div>
                     <div class="row">
@@ -95,7 +96,15 @@
                             <p>Tax</p>
                         </div>
                         <div class="col">
-                            <p class="tax"></p>
+                            <p class="checkout-tax"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>Tip</p>
+                        </div>
+                        <div class="col">
+                            <p class="checkout-tip"></p>
                         </div>
                     </div>
                     <div class="row">
@@ -103,7 +112,7 @@
                             <p>Total</p>
                         </div>
                         <div class="col">
-                            <p class="total"></p>
+                            <p class="checkout-total"></p>
                         </div>
                     </div>
                     <div class="row">

@@ -15,12 +15,25 @@ body {
     height: 100%;
     width: 100%;
     background-color: var(--primary-color);
+    font-size: 18px;
     line-height: 2em;
 }
 
 p {
     color: initial;
+    font-size: initial;
 }
+
+form {
+    background-color: transparent;
+    height: auto;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+
 
 /* ---------- Checkout ---------- */
 
@@ -34,20 +47,18 @@ p {
 }
 
 
+
 /* ---------- Payment Options ---------- */
 
 label {
     display: flex;
     align-items: center;
-    font-size: 1.5em;
 }
 
 input {
     width: fit-content;
     margin-right: 10px;
-    font-size: 1.3em;
 }
-
 
 .row {
     display: flex;
@@ -57,7 +68,7 @@ input {
 }
 
 .card-info {
-    width: 85%;
+    width: 80%;
     margin: 30px 0;
 }
 
@@ -75,9 +86,13 @@ input {
 
 #tip-other {
     width: 70px;
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
-.checkout-totals p {
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.checkout-greeting p {
     font-size: 1.5em;
 }

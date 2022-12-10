@@ -17,7 +17,7 @@
         </div>
         <div class="checkout-container">
             <div class="col">
-                <div class="row">
+                <div class="row checkout-greeting">
                     <p>Almost there! Just a few small details <br>so we can start your order</p>
                 </div>
                 <div class="payment-options">
@@ -33,10 +33,10 @@
                         </label>
                     </div>
                 </div>
-                <div class="card-info">
+                <form class="card-info">
                     <div class="row">
                         <label for="card-number">Card Number</label>
-                        <input type="text" name="card-number" id="card-number" placeholder="1234 5678 9012 3456">
+                        <input type="number" name="card-number" id="card-number" placeholder="1234 5678 9012 3456">
                     </div>
                     <div class="row">
                         <label for="card-name">Name on Card</label>
@@ -50,7 +50,7 @@
                         <label for="card-cvv">CVV</label>
                         <input type="text" name="card-cvv" id="card-cvv" placeholder="123">
                     </div>
-                </div>
+                </form>
                 <div class="card-tip">
                     <p>Care to leave a tip for your sushirista?</p>
                     <div class="row">
@@ -71,9 +71,14 @@
                                 <input type="radio" name="tip" value="other">
                                 Other
                             </label>
-                            <input type="text" name="tip-other" id="tip-other" placeholder="$">
+                            <input type="number" name="tip-other" id="tip-other" placeholder="$" disabled>
                         </div>
                     </div>
+                </div>
+                <div class="cash-info">
+                    <span>
+                        Don't forget to bring your receipt to the cashier <br>and consider leaving a tip for your sushirista!
+                    </span>
                 </div>
             </div>
             <div class="col">
@@ -127,7 +132,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="resources/index.js"></script>
+    <script src="scripts/checkout.js"></script>
 </body>
 
 </html>

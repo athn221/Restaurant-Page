@@ -14,14 +14,65 @@ $("input[name=payment-method]").change(togglePaymentMethod);
 function togglePaymentMethod() {
     paymentMethod = $("input[name=payment-method]:checked").val();
     if (paymentMethod == "card") {
-        console.log("card in");
         $(".card-tip").delay(200).fadeIn(200);
         $(".card-info").delay(200).fadeIn(200);
         $(".cash-info").fadeOut(200);
     } else {
-        console.log("cash in");
         $(".cash-info").delay(200).fadeIn(200);
         $(".card-info").fadeOut(200);
         $(".card-tip").fadeOut(200);
     }
 }
+
+
+
+// when the user clicks the submit button, do this stuff
+
+
+function validateCardForm() {
+    let valid = true;
+    let cardNumber = $("#card-number").val();
+    let cardName = $("#card-name").val();
+    let cardExpiration = $("#card-expiration").val();
+    let cvv = $("#card-cvv").val();
+    if (cardNumber.length != 16 || isNaN(cardNumber)) {
+        valid = false;
+    }
+    if (cardName.length < 3) {
+        valid = false;
+    }
+    if (cardExpiration.length != 4 || isNaN(cardExpiration)) {
+        valid = false;
+    }
+    if (cvv.length != 3 || isNaN(cvv)) {
+        valid = false;
+    }
+    return valid;
+}
+
+
+function storeCardData() {
+    let cardData = {
+        cardNumber: $("#card-number").val(),
+        cardName: $("#card-name").val(),
+        cardExpiration: $("#card-expiration").val(),
+        cvv: $("#card-cvv").val()
+    }
+}
+
+
+$(".checkout-btn").click(function() {
+    if (paymentMethod == "card") {
+        if (validateCardForm()) {
+            $("#checkout-form").submit(storeCardData());
+        } else {
+            $("#error-message").fadeIn(200);
+        }
+    } else {
+        $("#checkout-form").submit();
+    }
+});
+
+
+
+

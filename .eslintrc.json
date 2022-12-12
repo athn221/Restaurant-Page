@@ -3,9 +3,10 @@
     "browser": true,
     "es2021": true,
     "jquery": true,
-    "jest/globals": true
+    "jest": true
   },
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["jest"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",

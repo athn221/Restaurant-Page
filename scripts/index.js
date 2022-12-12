@@ -69,19 +69,7 @@ if (localStorage.getItem('items') === null) {
   localStorage.setItem('items', JSON.stringify(items));
 }
 
-let cartArr = []
-let totalPrice = 0
-let menuItem = document.getElementsByClassName("menu-item")[0]
-let price = document.getElementsByClassName("cart-total-price")[0]
-let tax = document.getElementsByClassName("cart-total-tax")
-
-let items = [['sushi 1', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 2', 50.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 3', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 4', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 5', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 6', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 7', 12.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['sushi 8', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1], ['big sushi', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1]]
-if (localStorage.getItem("items") === null) {
-    localStorage.setItem("items", JSON.stringify(items))
-}
-
-let itemStorage = JSON.parse(localStorage.getItem("items"))
-
+let itemStorage = JSON.parse(localStorage.getItem('items'));
 
 function shoppingCart() {
   if (isVisible == false) {
@@ -106,11 +94,10 @@ function shoppingCart() {
 // 3 - quantity selector
 
 function updateCart() {
-    menuItem.innerHTML = ""
-    totalPrice = 0
-    for (i = 0; i < cartArr.length; i++) {
-        menuItem.innerHTML += 
-        `
+  menuItem.innerHTML = '';
+  totalPrice = 0;
+  for (i = 0; i < cartArr.length; i++) {
+    menuItem.innerHTML += `
         <div class="menu-item">
             <div class="menu-details">
                 <h3 class="menu-name">${cartArr[i][0]}</h3>
@@ -154,73 +141,69 @@ function totalCost() {
 }
 
 function addItem(item) {
-    check = false;
-    for (i = 0; i < cartArr.length; i++) {
-        if (cartArr[i][0] == itemStorage[item][0]) {
-            check = true
-        }
+  check = false;
+  for (i = 0; i < cartArr.length; i++) {
+    if (cartArr[i][0] == itemStorage[item][0]) {
+      check = true;
     }
-    if (check == true) {
-        alert("Item is in cart!")
-    } else {
-        cartArr.push(itemStorage[item])
-        updateCart()
-        alert("Item added")
-    }
+  }
+  if (check == true) {
+    alert('Item is in cart!');
+  } else {
+    cartArr.push(itemStorage[item]);
+    updateCart();
+    alert('Item added');
+  }
 }
 
-function removeItem(item) { 
-    cartArr.splice(item,1)
-    updateCart()
+function removeItem(item) {
+  cartArr.splice(item, 1);
+  updateCart();
 }
 
 updateCart();
 
 /* ---------- Login Signup + Admin Login Signup ---------- */
 
-
 /* ---------- Login Signup + Admin Login Signup ---------- */
-
 
 // this is just setting up some login stuff for the email
 function signup() {
-    let email = document.getElementById("email").value;
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-    let passwordconfirm = document.getElementById("password-confirm").value;
+  let email = document.getElementById('email').value;
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
+  let passwordconfirm = document.getElementById('password-confirm').value;
 
-    if (passwordconfirm == password) {
-        if (username == "admin") {
-            alert("no")
-        } else {
-            localStorage.setItem("username", username);
-            localStorage.setItem("password", password);
-        }
-        } else {
-            alert("Passwords don't match")
-        }
+  if (passwordconfirm == password) {
+    if (username == 'admin') {
+      alert('no');
+    } else {
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+    }
+  } else {
+    alert("Passwords don't match");
+  }
 }
 
 function login() {
   let username = document.getElementById('username').value;
   let password = document.getElementById('password').value;
 
-    let usernameCustomer = localStorage.getItem("username");
-    let passwordCustomer = localStorage.getItem("password");
+  let usernameCustomer = localStorage.getItem('username');
+  let passwordCustomer = localStorage.getItem('password');
 
-    if (usernameCustomer == username && passwordCustomer == password) {
-        alert("Nice")
-        window.location.href = "menu.html"
-    } else if (username === "admin" &&  password === "admin") {
-        window.location.href = "admin-menu.html"
-    } else { 
-        alert("no")
-    }
+  if (usernameCustomer == username && passwordCustomer == password) {
+    alert('Nice');
+    window.location.href = 'menu.html';
+  } else if (username === 'admin' && password === 'admin') {
+    window.location.href = 'admin-menu.html';
+  } else {
+    alert('no');
+  }
 }
 
-
 /* ---------- Admin Editing Menu---------- */
-
 
 function adminMenu() {
   let menuContainer = document.getElementById('menu-container-id');
@@ -249,31 +232,21 @@ function adminRemoveItems() {
     if (itemStorage[i][0] === itemNameInput) {
       itemStorage.splice(i, 1);
     }
-
+  }
+  localStorage.setItem('items', JSON.stringify(itemStorage));
+  itemStorage = JSON.parse(localStorage.getItem('items'));
+  adminMenu();
 }
 
-function adminRemoveItems() {
-    let itemNameInput = document.getElementById("input-remove").value
-    let length = itemStorage.length;
-    for (i=0;i<length;i++) {
-        if (itemStorage[i][0] === itemNameInput) {
-            itemStorage.splice(i, 1)
-        }
-    }
-    localStorage.setItem("items", JSON.stringify(itemStorage))
-    itemStorage = JSON.parse(localStorage.getItem("items"))
-    adminMenu()
+function adminAddItems() {
+  let inputName = document.getElementById('input-name').value;
+  let inputPrice = parseInt(document.getElementById('input-price').value);
+  let inputDescription = document.getElementById('input-description').value;
+  let newItemArr = [inputName, inputPrice, inputDescription];
+
+  itemStorage.unshift(newItemArr);
+  localStorage.setItem('items', JSON.stringify(itemStorage));
+  adminMenu();
 }
 
-function adminAddItems() { 
-    let inputName = document.getElementById("input-name").value
-    let inputPrice = parseInt(document.getElementById("input-price").value)
-    let inputDescription = document.getElementById("input-description").value
-    let newItemArr = [inputName, inputPrice, inputDescription]
-
-    itemStorage.unshift(newItemArr)
-    localStorage.setItem("items", JSON.stringify(itemStorage))
-    adminMenu()
-}
-
-adminMenu()
+adminMenu();

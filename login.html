@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Name: Login</title>
-    <link rel="stylesheet" href="resources/stylesheets/style.css">
-</head>
-<body>
-    </div class="form-login">
-        <div class="form-content">
+    <link rel="stylesheet" href="resources/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="form-login">
+      <div class="form-content">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          id="username"
+          required
+        />
 
-            <label for="username">Username</label>
-            <input type="text" placeholder="Enter Username" id="username" required>
-    
+        <label for="password">Password</label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="password"
+          required
+        />
+      </div>
 
-            <label for="password">Password</label>
-            <input type="password" placeholder="Enter Password" id="password" required>
-    
-        </div>
-
-        <button onclick="login()" class="btn-login">Log In</button>
-        <a href="signup.html">No account? Sign up</a>
+      <button onclick="login()" class="btn-login">Log In</button>
+      <a href="signup.html">No account? Sign up</a>
     </div>
 
     <script src="scripts/index.js"></script>
-</body>
+  </body>
 </html>

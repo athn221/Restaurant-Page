@@ -64,12 +64,12 @@ nav {
 }
 
 .sliding-cart {
-    position: absolute;
-    height: 75%;
-    width: 25%;
-    background-color: rgb(250, 248, 248);
-    animation: slide-in .5s both;
-    z-index: 10;
+  position: absolute;
+  height: 75%;
+  width: 25%;
+  background-color: rgb(250, 248, 248);
+  animation: slide-in 0.5s both;
+  z-index: 10;
 }
 
 /* ----- Grid ----- */
@@ -138,24 +138,24 @@ header a:hover {
 }
 
 #div-add-items {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #div-add-items {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ---------- Footer ---------- */
 
 footer {
-    /* position:absolute; */
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    place-content: center;
-    background-color: #252627;
+  /* position:absolute; */
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  place-content: center;
+  background-color: #252627;
 }
 
 .fb:link {
@@ -255,9 +255,6 @@ h3 {
 .menu-price {
   font-size: 25px;
 }
-
-
-
 
 /* ---------- About ---------- */
 

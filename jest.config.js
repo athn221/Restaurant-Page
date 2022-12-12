@@ -1,6 +1,6 @@
 const config = {
-    testEnvironment: 'jsdom',
-    verbose: true
-}
+  testEnvironment: "jsdom",
+  verbose: true,
+};
 
-module.exports = config
+module.exports = config;

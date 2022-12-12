@@ -1,30 +1,38 @@
 // on page load, do this stuff
 $(document).ready(function() {
+
+    // ensure card options are loaded by default
     togglePaymentMethod();
 
-
+    // set the default tip to 15%
+    $('input[value="15"]').prop('checked', true);
+    
+    
     // display tip dollar amount next to tip percentage radio buttons
     let checkoutTotal = Number($('.checkout-total').text());
+
     function displayTipAmount() {
         document.querySelectorAll('input[name=tip]').forEach((e) => {
-            console.log( e.getAttribute('value'));
             let tipPercent = e.getAttribute("value");
             if (tipPercent === "other") {
                 return;
             }
             else {
-            let tipAmount = checkoutTotal * (tipPercent / 100);
-            let tipAmountRounded = tipAmount.toFixed(2);
-            e.parentElement.append(` ($${tipAmountRounded})`);
+                let tipAmount = checkoutTotal * (tipPercent / 100);
+                let tipAmountRounded = tipAmount.toFixed(2);
+                e.parentElement.append(` ($${tipAmountRounded})`);
             }
         });
     };
     displayTipAmount();
+    
+    // call the updateTip function to display the tip amount on page load
+    updateTip();
 });
 
 
 
-// when the user changes the payment method, do this stuff
+// payment method toggle
 let paymentMethod;
 
 $("input[name=payment-method]").change(togglePaymentMethod);
@@ -44,7 +52,7 @@ function togglePaymentMethod() {
 
 
 
-// removing the disabled from other tip field when selected
+// removing the disabled from "other" tip field when selected
 $("input[name=tip]").change(() => {
     if ($("input[name=tip]:checked").val() === "other") {
         $("#tip-other").removeAttr("disabled");
@@ -54,8 +62,31 @@ $("input[name=tip]").change(() => {
 });
 
 
+// update the tip amount on the checkout form
+function updateTip() {
+    let tipPercent = $("input[name=tip]:checked").val();
+    let tipAmount;
+    if (tipPercent === "other") {
+        tipAmount = Number($("#tip-other").val());
+    } else {
+        let checkoutTotal = Number($('.checkout-total').text());
+        console.log(checkoutTotal);
+        tipAmount = checkoutTotal * (tipPercent / 100);
+    }
+    console.log(tipAmount)
+    let tipAmountRounded = tipAmount.toFixed(2);
+    $(".checkout-tip").text(tipAmountRounded);
+};
 
-// when the user clicks the submit button, do this stuff
+// call the updateTip function when the tip radio buttons are changed
+$("input[name=tip]").change(updateTip);
+
+// call the updateTip function when the "#tip-other" input is changed
+$("#tip-other").change(updateTip);
+
+
+
+// card validation
 function validateCardForm() {
     let cardNumber = $("#card-number").val();
     let cardName = $("#card-name").val();

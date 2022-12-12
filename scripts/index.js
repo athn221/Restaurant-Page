@@ -1,7 +1,73 @@
 /* ---------- Cart ---------- */
 
-let cart = document.getElementById("cart")
-let isVisible = false
+let cart = document.getElementById('cart');
+let isVisible = false;
+
+let cartArr = [];
+let totalPrice = 0;
+let menuItem = document.getElementsByClassName('menu-item')[0];
+let price = document.getElementsByClassName('cart-total-price')[0];
+let tax = document.getElementsByClassName('cart-total-tax');
+
+let items = [
+  [
+    'sushi 1',
+    52.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+  [
+    'sushi 2',
+    50.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+  [
+    'sushi 3',
+    52.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+  [
+    'sushi 4',
+    52.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+  [
+    'sushi 5',
+    52.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+  [
+    'sushi 6',
+    52.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+  [
+    'sushi 7',
+    12.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+  [
+    'sushi 8',
+    52.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+  [
+    'big sushi',
+    52.99,
+    'A fine piece of sushi with rice and fish wrapped in kelp.',
+    1,
+  ],
+];
+if (localStorage.getItem('items') === null) {
+  localStorage.setItem('items', JSON.stringify(items));
+}
 
 let cartArr = []
 let totalPrice = 0
@@ -18,14 +84,20 @@ let itemStorage = JSON.parse(localStorage.getItem("items"))
 
 
 function shoppingCart() {
-    if (isVisible == false) {
-        isVisible = true
-        cart.classList.replace("shopping-cart", "sliding-cart")
-    } else if (isVisible == true) {
-        isVisible = false
-        cart.classList.replace("sliding-cart","shopping-cart")
-    }
+  if (isVisible == false) {
+    isVisible = true;
+    cart.classList.replace('shopping-cart', 'sliding-cart');
+  } else if (isVisible == true) {
+    isVisible = false;
+    cart.classList.replace('sliding-cart', 'shopping-cart');
+  }
 }
+
+// info for the array for organiziation purposes
+// 0 - name
+// 1 - price
+// 2 - description
+// 3 - quantity selector
 
 // info for the array for organiziation purposes
 // 0 - name
@@ -50,33 +122,35 @@ function updateCart() {
             <input class="cart-quantity-input" onchange="changeQuantity()" type="number" value='${cartArr[i][3]}'>
             <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
         </div>
-        `
-    }
-    totalCost()
+        `;
+  }
+  totalCost();
 }
 
 function changeQuantity() {
-    let cartQuantityInput = document.getElementsByClassName("cart-quantity-input")
-    for (i = 0; i < cartQuantityInput.length; i++) {
-        if (cartQuantityInput[i].value < 1) {
-            cartQuantityInput[i].value = 1
-        }
-        let popElement = cartQuantityInput[i].value
-        cartArr[i].pop()
-        cartArr[i].push(parseInt(popElement))
+  let cartQuantityInput = document.getElementsByClassName(
+    'cart-quantity-input',
+  );
+  for (i = 0; i < cartQuantityInput.length; i++) {
+    if (cartQuantityInput[i].value < 1) {
+      cartQuantityInput[i].value = 1;
     }
-    totalPrice = 0
-    totalCost()
+    let popElement = cartQuantityInput[i].value;
+    cartArr[i].pop();
+    cartArr[i].push(parseInt(popElement));
+  }
+  totalPrice = 0;
+  totalCost();
 }
 
 function totalCost() {
-    for (i = 0; i < cartArr.length; i++) {
-        let cartPrice = cartArr[i][1] + cartArr[i][1]*.06
-        let numberOfItems = cartArr[i][3]
-        let finalPrice = cartPrice*numberOfItems
-        totalPrice = finalPrice + totalPrice
-    }
-    return price.innerHTML = "$" + parseFloat(totalPrice).toFixed(2)
+  for (i = 0; i < cartArr.length; i++) {
+    let cartPrice = cartArr[i][1] + cartArr[i][1] * 0.06;
+    let numberOfItems = cartArr[i][3];
+    let finalPrice = cartPrice * numberOfItems;
+    totalPrice = finalPrice + totalPrice;
+  }
+  return (price.innerHTML = '$' + parseFloat(totalPrice).toFixed(2));
 }
 
 function addItem(item) {
@@ -100,8 +174,9 @@ function removeItem(item) {
     updateCart()
 }
 
-updateCart()
+updateCart();
 
+/* ---------- Login Signup + Admin Login Signup ---------- */
 
 
 /* ---------- Login Signup + Admin Login Signup ---------- */
@@ -127,8 +202,8 @@ function signup() {
 }
 
 function login() {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
 
     let usernameCustomer = localStorage.getItem("username");
     let passwordCustomer = localStorage.getItem("password");
@@ -148,10 +223,10 @@ function login() {
 
 
 function adminMenu() {
-    let menuContainer = document.getElementById("menu-container-id")
-    menuContainer.innerHTML = ""
-    for (i = 0; i < itemStorage.length; i++) {
-        menuContainer.innerHTML += `
+  let menuContainer = document.getElementById('menu-container-id');
+  menuContainer.innerHTML = '';
+  for (i = 0; i < itemStorage.length; i++) {
+    menuContainer.innerHTML += `
 
         <div class="menu-item">
             <div class="menu-details">
@@ -163,7 +238,16 @@ function adminMenu() {
                 <button class="BTN-ADD" onclick='addItem(${i})'>ADD TO CART</button>
             </div>
         </div>
-        `
+        `;
+  }
+}
+
+function adminRemoveItems() {
+  let itemNameInput = document.getElementById('input-remove').value;
+  let length = itemStorage.length;
+  for (i = 0; i < length; i++) {
+    if (itemStorage[i][0] === itemNameInput) {
+      itemStorage.splice(i, 1);
     }
 
 }

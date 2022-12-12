@@ -1,3 +1,10 @@
+const { moduleExpression } = require("@babel/types");
+
+// declare export module
+module.exports = {};
+
+
+
 /* ---------- Cart ---------- */
 
 let cart = document.getElementById('cart');
@@ -71,7 +78,7 @@ if (localStorage.getItem('items') === null) {
 
 let itemStorage = JSON.parse(localStorage.getItem('items'));
 
-function shoppingCart() {
+module.exports.shoppingCart = function shoppingCart() {
   if (isVisible == false) {
     isVisible = true;
     cart.classList.replace('shopping-cart', 'sliding-cart');
@@ -87,13 +94,7 @@ function shoppingCart() {
 // 2 - description
 // 3 - quantity selector
 
-// info for the array for organiziation purposes
-// 0 - name
-// 1 - price
-// 2 - description
-// 3 - quantity selector
-
-function updateCart() {
+module.exports.updateCart = function updateCart() {
   menuItem.innerHTML = '';
   totalPrice = 0;
   for (i = 0; i < cartArr.length; i++) {
@@ -114,7 +115,7 @@ function updateCart() {
   totalCost();
 }
 
-function changeQuantity() {
+module.exports.changeQuantity = function changeQuantity() {
   let cartQuantityInput = document.getElementsByClassName(
     'cart-quantity-input',
   );
@@ -130,7 +131,7 @@ function changeQuantity() {
   totalCost();
 }
 
-function totalCost() {
+module.exports.totalCost = function totalCost() {
   for (i = 0; i < cartArr.length; i++) {
     let cartPrice = cartArr[i][1] + cartArr[i][1] * 0.06;
     let numberOfItems = cartArr[i][3];
@@ -140,7 +141,7 @@ function totalCost() {
   return (price.innerHTML = '$' + parseFloat(totalPrice).toFixed(2));
 }
 
-function addItem(item) {
+module.exports.addItem = function addItem(item) {
   check = false;
   for (i = 0; i < cartArr.length; i++) {
     if (cartArr[i][0] == itemStorage[item][0]) {
@@ -156,7 +157,7 @@ function addItem(item) {
   }
 }
 
-function removeItem(item) {
+module.exports.removeItem = function removeItem(item) {
   cartArr.splice(item, 1);
   updateCart();
 }
@@ -165,10 +166,8 @@ updateCart();
 
 /* ---------- Login Signup + Admin Login Signup ---------- */
 
-/* ---------- Login Signup + Admin Login Signup ---------- */
-
 // this is just setting up some login stuff for the email
-function signup() {
+module.exports.signup = function signup() {
   let email = document.getElementById('email').value;
   let username = document.getElementById('username').value;
   let password = document.getElementById('password').value;
@@ -186,7 +185,7 @@ function signup() {
   }
 }
 
-function login() {
+module.exports.login = function login() {
   let username = document.getElementById('username').value;
   let password = document.getElementById('password').value;
 
@@ -205,7 +204,7 @@ function login() {
 
 /* ---------- Admin Editing Menu---------- */
 
-function adminMenu() {
+module.exports.adminMenu = function adminMenu() {
   let menuContainer = document.getElementById('menu-container-id');
   menuContainer.innerHTML = '';
   for (i = 0; i < itemStorage.length; i++) {
@@ -225,7 +224,7 @@ function adminMenu() {
   }
 }
 
-function adminRemoveItems() {
+module.exports.adminRemoveItems = function adminRemoveItems() {
   let itemNameInput = document.getElementById('input-remove').value;
   let length = itemStorage.length;
   for (i = 0; i < length; i++) {
@@ -238,7 +237,7 @@ function adminRemoveItems() {
   adminMenu();
 }
 
-function adminAddItems() {
+module.exports.adminAddItems = function adminAddItems() {
   let inputName = document.getElementById('input-name').value;
   let inputPrice = parseInt(document.getElementById('input-price').value);
   let inputDescription = document.getElementById('input-description').value;

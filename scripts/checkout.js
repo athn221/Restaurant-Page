@@ -40,43 +40,44 @@ $("input[name=tip]").change(() => {
 
 // when the user clicks the submit button, do this stuff
 function validateCardForm() {
-    let valid = true;
     let cardNumber = $("#card-number").val();
     let cardName = $("#card-name").val();
     let cardExpiration = $("#card-expiration").val();
     let cvv = $("#card-cvv").val();
     if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+        return false;
+    }
+    else if (cardName.length < 3) {
         valid = false;
     }
-    if (cardName.length < 3) {
+    else if (cardExpiration.length !== 4 || isNaN(cardExpiration)) {
         valid = false;
     }
-    if (cardExpiration.length !== 4 || isNaN(cardExpiration)) {
+    else if (cvv.length !== 3 || isNaN(cvv)) {
         valid = false;
     }
-    if (cvv.length !== 3 || isNaN(cvv)) {
-        valid = false;
-    }
-    return valid;
-}
+    else return true;
+};
 
-// TODO not sure all of this is necessary, but will need to store at least card #
+
+// ? not sure all of this is necessary, but will need to store at least card # for receipt
 function storeCardData() {
     let cardData = {
         cardNumber: $("#card-number").val(),
         cardName: $("#card-name").val(),
         cardExpiration: $("#card-expiration").val(),
         cvv: $("#card-cvv").val()
-    }
-}
+    };
+};
 
 
 $(".checkout-btn").click(function() {
     if (paymentMethod === "card") {
         if (validateCardForm()) {
             $("#checkout-form").submit(storeCardData());
+            checkoutTime();
         } else {
-            $("#error-message").fadeIn(200);
+            console.log('error');
         }
     } else {
         $("#checkout-form").submit();
@@ -85,4 +86,12 @@ $(".checkout-btn").click(function() {
 
 
 
+// keep track of the time a user has taken to successfully checkout
+// * this outputs in milliseconds, so divide by 1000 to get seconds
+const start = new Date();
 
+function checkoutTime() {
+    const end = new Date();
+    const time = end - start;
+    console.log(time);
+}

@@ -19,5 +19,8 @@
   "homepage": "https://github.com/mononokayy/120-2.0#readme",
   "devDependencies": {
     "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "dexie": "^3.2.2"
   }
 }

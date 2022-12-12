@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Name: Sign up</title>
-    <link rel="stylesheet" href="resources/stylesheets/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="resources/stylesheets/style.css" />
+  </head>
+  <body>
     <form onsubmit="signup()">
-        <div class="form-content">
+      <div class="form-content">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          id="username"
+          required
+        />
 
-            <label for="username">Username</label>
-            <input type="text" placeholder="Enter Username" id="username" required>
-    
+        <label for="password">Password</label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="password"
+          required
+        />
 
-            <label for="password">Password</label>
-            <input type="password" placeholder="Enter Password" id="password" required>
+        <label for="password">Confirm Password</label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="password-confirm"
+          required
+        />
+      </div>
 
-            <label for="password">Confirm Password</label>
-            <input type="password" placeholder="Enter Password" id="password-confirm" required>
-    
-        </div>
-
-        <a href="login.html">Have an account? Log in</a>
-        <button type="submit" class="btn-signup">Sign Up</button>
-
+      <a href="login.html">Have an account? Log in</a>
+      <button type="submit" class="btn-signup">Sign Up</button>
     </form>
     <script src="scripts/index.js"></script>
-</body>
+  </body>
 </html>

@@ -15,7 +15,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: var(--primary-color);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 2em;
 }
 
@@ -57,7 +57,7 @@ label {
 
 input {
     width: fit-content;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .row {
@@ -69,30 +69,41 @@ input {
 
 .card-info {
     width: 80%;
-    margin: 30px 0;
+    margin: 25px 0;
 }
 
 .payment-options {
-    margin: 60px 0;
+    margin: 50px 0;
 }
 
 .card-tip {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .tip-other {
     display: flex
 }
 
-#tip-other {
-    width: 70px;
-    margin-left: 12px;
-}
-
+/* * this is making sure firefox doesn't show arrows in the textbox */
 input[type=number] {
     -moz-appearance: textfield;
 }
 
 .checkout-greeting p {
     font-size: 1.5em;
+}
+
+.card-tip label {
+    justify-content: start;
+    width: 160px;
+}
+
+ 
+#tip-other {
+    width: 70px;
+    margin-left: 12px;
+}
+
+.tip-other label {
+    width: fit-content;
 }

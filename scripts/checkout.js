@@ -1,6 +1,25 @@
 // on page load, do this stuff
 $(document).ready(function() {
     togglePaymentMethod();
+
+
+    // display tip dollar amount next to tip percentage radio buttons
+    let checkoutTotal = Number($('.checkout-total').text());
+    function displayTipAmount() {
+        document.querySelectorAll('input[name=tip]').forEach((e) => {
+            console.log( e.getAttribute('value'));
+            let tipPercent = e.getAttribute("value");
+            if (tipPercent === "other") {
+                return;
+            }
+            else {
+            let tipAmount = checkoutTotal * (tipPercent / 100);
+            let tipAmountRounded = tipAmount.toFixed(2);
+            e.parentElement.append(` ($${tipAmountRounded})`);
+            }
+        });
+    };
+    displayTipAmount();
 });
 
 
@@ -28,10 +47,8 @@ function togglePaymentMethod() {
 // removing the disabled from other tip field when selected
 $("input[name=tip]").change(() => {
     if ($("input[name=tip]:checked").val() === "other") {
-        console.log("other selected");
         $("#tip-other").removeAttr("disabled");
     } else {
-        console.log("other deselected");
         $("#tip-other").attr("disabled", "disabled");
     }
 });
@@ -95,3 +112,5 @@ function checkoutTime() {
     const time = end - start;
     console.log(time);
 }
+
+

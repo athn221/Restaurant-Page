@@ -1,9 +1,7 @@
-const { moduleExpression } = require("@babel/types");
+const {moduleExpression} = require('@babel/types');
 
 // declare export module
 module.exports = {};
-
-
 
 /* ---------- Cart ---------- */
 
@@ -17,76 +15,76 @@ let price = document.getElementsByClassName('cart-total-price')[0];
 let tax = document.getElementsByClassName('cart-total-tax');
 
 let items = [
-  [
-    'sushi 1',
-    52.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
-  [
-    'sushi 2',
-    50.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
-  [
-    'sushi 3',
-    52.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
-  [
-    'sushi 4',
-    52.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
-  [
-    'sushi 5',
-    52.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
-  [
-    'sushi 6',
-    52.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
-  [
-    'sushi 7',
-    12.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
-  [
-    'sushi 8',
-    52.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
-  [
-    'big sushi',
-    52.99,
-    'A fine piece of sushi with rice and fish wrapped in kelp.',
-    1,
-  ],
+	[
+		'sushi 1',
+		52.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
+	[
+		'sushi 2',
+		50.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
+	[
+		'sushi 3',
+		52.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
+	[
+		'sushi 4',
+		52.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
+	[
+		'sushi 5',
+		52.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
+	[
+		'sushi 6',
+		52.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
+	[
+		'sushi 7',
+		12.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
+	[
+		'sushi 8',
+		52.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
+	[
+		'big sushi',
+		52.99,
+		'A fine piece of sushi with rice and fish wrapped in kelp.',
+		1,
+	],
 ];
 if (localStorage.getItem('items') === null) {
-  localStorage.setItem('items', JSON.stringify(items));
+	localStorage.setItem('items', JSON.stringify(items));
 }
 
 let itemStorage = JSON.parse(localStorage.getItem('items'));
 
 module.exports.shoppingCart = function shoppingCart() {
-  if (isVisible == false) {
-    isVisible = true;
-    cart.classList.replace('shopping-cart', 'sliding-cart');
-  } else if (isVisible == true) {
-    isVisible = false;
-    cart.classList.replace('sliding-cart', 'shopping-cart');
-  }
-}
+	if (isVisible == false) {
+		isVisible = true;
+		cart.classList.replace('shopping-cart', 'sliding-cart');
+	} else if (isVisible == true) {
+		isVisible = false;
+		cart.classList.replace('sliding-cart', 'shopping-cart');
+	}
+};
 
 // info for the array for organiziation purposes
 // 0 - name
@@ -95,10 +93,10 @@ module.exports.shoppingCart = function shoppingCart() {
 // 3 - quantity selector
 
 module.exports.updateCart = function updateCart() {
-  menuItem.innerHTML = '';
-  totalPrice = 0;
-  for (i = 0; i < cartArr.length; i++) {
-    menuItem.innerHTML += `
+	menuItem.innerHTML = '';
+	totalPrice = 0;
+	for (i = 0; i < cartArr.length; i++) {
+		menuItem.innerHTML += `
         <div class="menu-item">
             <div class="menu-details">
                 <h3 class="menu-name">${cartArr[i][0]}</h3>
@@ -111,56 +109,54 @@ module.exports.updateCart = function updateCart() {
             <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
         </div>
         `;
-  }
-  totalCost();
-}
+	}
+	totalCost();
+};
 
 module.exports.changeQuantity = function changeQuantity() {
-  let cartQuantityInput = document.getElementsByClassName(
-    'cart-quantity-input',
-  );
-  for (i = 0; i < cartQuantityInput.length; i++) {
-    if (cartQuantityInput[i].value < 1) {
-      cartQuantityInput[i].value = 1;
-    }
-    let popElement = cartQuantityInput[i].value;
-    cartArr[i].pop();
-    cartArr[i].push(parseInt(popElement));
-  }
-  totalPrice = 0;
-  totalCost();
-}
+	let cartQuantityInput = document.getElementsByClassName('cart-quantity-input');
+	for (i = 0; i < cartQuantityInput.length; i++) {
+		if (cartQuantityInput[i].value < 1) {
+			cartQuantityInput[i].value = 1;
+		}
+		let popElement = cartQuantityInput[i].value;
+		cartArr[i].pop();
+		cartArr[i].push(parseInt(popElement));
+	}
+	totalPrice = 0;
+	totalCost();
+};
 
 module.exports.totalCost = function totalCost() {
-  for (i = 0; i < cartArr.length; i++) {
-    let cartPrice = cartArr[i][1] + cartArr[i][1] * 0.06;
-    let numberOfItems = cartArr[i][3];
-    let finalPrice = cartPrice * numberOfItems;
-    totalPrice = finalPrice + totalPrice;
-  }
-  return (price.innerHTML = '$' + parseFloat(totalPrice).toFixed(2));
-}
+	for (i = 0; i < cartArr.length; i++) {
+		let cartPrice = cartArr[i][1] + cartArr[i][1] * 0.06;
+		let numberOfItems = cartArr[i][3];
+		let finalPrice = cartPrice * numberOfItems;
+		totalPrice = finalPrice + totalPrice;
+	}
+	return (price.innerHTML = '$' + parseFloat(totalPrice).toFixed(2));
+};
 
 module.exports.addItem = function addItem(item) {
-  check = false;
-  for (i = 0; i < cartArr.length; i++) {
-    if (cartArr[i][0] == itemStorage[item][0]) {
-      check = true;
-    }
-  }
-  if (check == true) {
-    alert('Item is in cart!');
-  } else {
-    cartArr.push(itemStorage[item]);
-    updateCart();
-    alert('Item added');
-  }
-}
+	check = false;
+	for (i = 0; i < cartArr.length; i++) {
+		if (cartArr[i][0] == itemStorage[item][0]) {
+			check = true;
+		}
+	}
+	if (check == true) {
+		alert('Item is in cart!');
+	} else {
+		cartArr.push(itemStorage[item]);
+		updateCart();
+		alert('Item added');
+	}
+};
 
 module.exports.removeItem = function removeItem(item) {
-  cartArr.splice(item, 1);
-  updateCart();
-}
+	cartArr.splice(item, 1);
+	updateCart();
+};
 
 updateCart();
 
@@ -168,47 +164,47 @@ updateCart();
 
 // this is just setting up some login stuff for the email
 module.exports.signup = function signup() {
-  let email = document.getElementById('email').value;
-  let username = document.getElementById('username').value;
-  let password = document.getElementById('password').value;
-  let passwordconfirm = document.getElementById('password-confirm').value;
+	let email = document.getElementById('email').value;
+	let username = document.getElementById('username').value;
+	let password = document.getElementById('password').value;
+	let passwordconfirm = document.getElementById('password-confirm').value;
 
-  if (passwordconfirm == password) {
-    if (username == 'admin') {
-      alert('no');
-    } else {
-      localStorage.setItem('username', username);
-      localStorage.setItem('password', password);
-    }
-  } else {
-    alert("Passwords don't match");
-  }
-}
+	if (passwordconfirm == password) {
+		if (username == 'admin') {
+			alert('no');
+		} else {
+			localStorage.setItem('username', username);
+			localStorage.setItem('password', password);
+		}
+	} else {
+		alert("Passwords don't match");
+	}
+};
 
 module.exports.login = function login() {
-  let username = document.getElementById('username').value;
-  let password = document.getElementById('password').value;
+	let username = document.getElementById('username').value;
+	let password = document.getElementById('password').value;
 
-  let usernameCustomer = localStorage.getItem('username');
-  let passwordCustomer = localStorage.getItem('password');
+	let usernameCustomer = localStorage.getItem('username');
+	let passwordCustomer = localStorage.getItem('password');
 
-  if (usernameCustomer == username && passwordCustomer == password) {
-    alert('Nice');
-    window.location.href = 'menu.html';
-  } else if (username === 'admin' && password === 'admin') {
-    window.location.href = 'admin-menu.html';
-  } else {
-    alert('no');
-  }
-}
+	if (usernameCustomer == username && passwordCustomer == password) {
+		alert('Nice');
+		window.location.href = 'menu.html';
+	} else if (username === 'admin' && password === 'admin') {
+		window.location.href = 'admin-menu.html';
+	} else {
+		alert('no');
+	}
+};
 
 /* ---------- Admin Editing Menu---------- */
 
 module.exports.adminMenu = function adminMenu() {
-  let menuContainer = document.getElementById('menu-container-id');
-  menuContainer.innerHTML = '';
-  for (i = 0; i < itemStorage.length; i++) {
-    menuContainer.innerHTML += `
+	let menuContainer = document.getElementById('menu-container-id');
+	menuContainer.innerHTML = '';
+	for (i = 0; i < itemStorage.length; i++) {
+		menuContainer.innerHTML += `
 
         <div class="menu-item">
             <div class="menu-details">
@@ -221,31 +217,31 @@ module.exports.adminMenu = function adminMenu() {
             </div>
         </div>
         `;
-  }
-}
+	}
+};
 
 module.exports.adminRemoveItems = function adminRemoveItems() {
-  let itemNameInput = document.getElementById('input-remove').value;
-  let length = itemStorage.length;
-  for (i = 0; i < length; i++) {
-    if (itemStorage[i][0] === itemNameInput) {
-      itemStorage.splice(i, 1);
-    }
-  }
-  localStorage.setItem('items', JSON.stringify(itemStorage));
-  itemStorage = JSON.parse(localStorage.getItem('items'));
-  adminMenu();
-}
+	let itemNameInput = document.getElementById('input-remove').value;
+	let length = itemStorage.length;
+	for (i = 0; i < length; i++) {
+		if (itemStorage[i][0] === itemNameInput) {
+			itemStorage.splice(i, 1);
+		}
+	}
+	localStorage.setItem('items', JSON.stringify(itemStorage));
+	itemStorage = JSON.parse(localStorage.getItem('items'));
+	adminMenu();
+};
 
 module.exports.adminAddItems = function adminAddItems() {
-  let inputName = document.getElementById('input-name').value;
-  let inputPrice = parseInt(document.getElementById('input-price').value);
-  let inputDescription = document.getElementById('input-description').value;
-  let newItemArr = [inputName, inputPrice, inputDescription];
+	let inputName = document.getElementById('input-name').value;
+	let inputPrice = parseInt(document.getElementById('input-price').value);
+	let inputDescription = document.getElementById('input-description').value;
+	let newItemArr = [inputName, inputPrice, inputDescription];
 
-  itemStorage.unshift(newItemArr);
-  localStorage.setItem('items', JSON.stringify(itemStorage));
-  adminMenu();
-}
+	itemStorage.unshift(newItemArr);
+	localStorage.setItem('items', JSON.stringify(itemStorage));
+	adminMenu();
+};
 
 adminMenu();

@@ -17,6 +17,11 @@ body {
   background-color: var(--primary-color);
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /* ---------- Nav ---------- */
 
 nav {
@@ -27,7 +32,7 @@ nav {
   padding: 1em 10%;
 }
 
-.nav-links button {
+.nav-links a {
   padding: 15px 20px;
   border: none;
   border-radius: 25px;
@@ -37,7 +42,7 @@ nav {
   transition: 500ms ease-in-out;
 }
 
-.nav-links button:hover {
+.nav-links a:hover {
   background-color: #c2d6ff;
   box-shadow: 0 0 4px #b1caff;
 }
@@ -93,11 +98,13 @@ main {
 }
 
 .call-to-action-container {
-  height: 90px;
+  height: 220px;
+  align-items: center;
 }
 
 .call-to-action-btn {
-  padding: 15px 20px;
+  display: block;
+  padding: 20px 20px;
   border: none;
   border-radius: 25px;
   font-family: "Indie Flower", cursive;
@@ -125,13 +132,13 @@ main {
 .blush-left {
   transform: rotate(18deg);
   position: relative;
-  top: -41%;
+  top: -21%;
   left: 10%;
 }
 
 .blush-right {
   transform: rotate(-18deg);
   position: relative;
-  top: -58%;
+  top: -28%;
   left: 58%;
 }

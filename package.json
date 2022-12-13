@@ -4,7 +4,12 @@
   "description": "Let's try this again.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "format": "npm run prettier:fix && npm run lint:fix"
   },
   "repository": {
     "type": "git",
@@ -18,9 +23,19 @@
   },
   "homepage": "https://github.com/mononokayy/120-2.0#readme",
   "devDependencies": {
-    "jest": "^29.3.1"
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.1",
+    "dexie": "^3.2.2"
   },
   "dependencies": {
-    "dexie": "^3.2.2"
+    "eslint-plugin-jest": "^27.1.6",
+    "jest-environment-jsdom": "^29.3.1"
   }
 }

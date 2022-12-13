@@ -14,10 +14,10 @@
         <div class="navbar">
             <div>
                 <a href="#">Home</a>
-                <a href="#">Menu</a>
+                <a href="menu.html">Menu</a>   
                 <a href="#">Reservations</a>
                 <a href="#">ABCXYZ</a>
-                <a href="#">DEFUVW</a>
+                <a href="login.html">Sign Out</a>
             </div>
         </div>
 
@@ -26,126 +26,36 @@
                 <ion-icon class="icon-cart" name="cart-outline"></ion-icon>
             </button>
             <div class="shopping-cart" id="cart"">
-                <div class=" menu-item">
-                <img src="images/burger-img.png" alt="" class="menu-pic">
-                <button class="menu-btn">
+                
+                <div class="menu-item">
                     <div class="menu-details">
-                        <h3 class="menu-name">burger</h3>
+                        <h3 class="menu-name">sushi 1</h3>
                         <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
                     </div>
                     <div class="menu-tag">
-                    </button>
-                    <span class="menu-price">$52.99</span>
+                        <span class="menu-price">$52.99</span>
+                        <button class="BTN-ADD" onclick="">ADD TO CART</button>
                     </div>
-                <input class="cart-quantity-input" type="number" value="2">
-                <button class="BTN-REMOVE" type="button">REMOVE</button>
+                    <button class="BTN-REMOVE" type="button">REMOVE</button>
+                </div>
+
+                <div class="cart-total">
+                    <strong class="cart-tax-title">Tax</strong>
+                    <span class="cart-total-tax">6%</span>
+                    <br>
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">$52.99</span>
+                    <a href="checkout.html">Checkout</a>
+                </div>
             </div>
-            <div class="cart-total">
-                <strong class="cart-tax-title">Tax</strong>
-                <span class="cart-total-tax">6%</span>
-                <br>
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$105.98</span>
-            </div>
-            <a href="checkout.html">Checkout</a>
-        </div>
         </div>
     </nav>
 
     <section class="menu-sect">
 
         <div class="menu-container grid-container" id="menu-container-id">
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 1</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 2</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$50.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 3</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 4</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 5</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 6</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 7</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$12.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 8</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">big sushi</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="">ADD TO CART</button>
-                </div>
-            </div>
         </div>
+        
     </section>
 
     <footer>

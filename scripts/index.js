@@ -288,7 +288,6 @@ updateCart();
 
 /* ---------- Login Signup + Admin Login Signup ---------- */
 
-// this is just setting up some login stuff for the email
 function signup() {
   let email = document.getElementById('email').value
   let username = document.getElementById('username').value;
@@ -297,7 +296,7 @@ function signup() {
 
   if (passwordconfirm == password) {
     if (username == 'admin') {
-      alert('no');
+      alert("Username unavailable. Please try again.")
     } else {
       localStorage.setItem('email', email)
       localStorage.setItem('username', username);
@@ -311,11 +310,9 @@ function signup() {
 
 
 function login() {
-  // let email = document.getElementById('email').value;
   let username = document.getElementById('username').value;
   let password = document.getElementById('password').value;
 
-  // let emailCustomer = localStorage.getItem('email');
   let usernameCustomer = localStorage.getItem('username');
   let passwordCustomer = localStorage.getItem('password');
 
@@ -332,7 +329,6 @@ function login() {
 /* ---------- Admin Editing Menu---------- */
 
 function adminMenu() {
-  // let menuContainer = document.getElementById('menu-container-id');
   let foodSection = document.getElementsByClassName('food-section');
   console.log(foodSection);
   let categories = ['Appetizer', 'Cold Plates', 'Sashimi', 'Signature Rolls', 'Vegan Rolls']

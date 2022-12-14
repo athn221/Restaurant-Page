@@ -20,29 +20,35 @@
             <div>
                 <a href="#">Home</a>
                 <a href="admin-menu.html">Menu</a>
-                <a href="#">Reservations</a>
                 <a href="#">ABCXYZ</a>
                 <a href="login.html">Admin Sign Out</a>
             </div>
-        </div>
-        <div class="menu-item">
-            <div class="menu-details">
-                <h3 class="menu-name">sushi 1</h3>
-                <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
+            <div class="menu-item">
+                <div class="menu-details">
+                    <h3 class="menu-name">Edamame</h3>
+                    <span class="menu-description">Steamed young soybeans in pods, lightly seasoned with a pinch of salt. A subtle nutty flavor with a soft, firm bite texture.</span>
+                </div>
+                <div class="menu-tag">
+                    <span class="menu-price">$5.99</span>
+                    <button class="BTN-ADD" onclick="addItem(['Edamame', 5.99, 'Steamed young soybeans in pods, lightly seasoned with a pinch of salt. A subtle nutty flavor with a soft, firm bite texture.', 1])">ADD TO CART</button>
+                </div>
             </div>
-            <div class="menu-tag">
-                <span class="menu-price">$52.99</span>
-                <button class="BTN-ADD" onclick="">ADD TO CART</button>
-            </div>
-            <button class="BTN-REMOVE" type="button">REMOVE</button>
         </div>
     </nav>
 
     <section class="menu-sect">
-        
+
         <input type="text" id="input-remove">
         <button onclick="adminRemoveItems()">Remove Item</button>
-        <h1>case sensitive, double click to confirm</h1>
+        <h1>Case sensitive. Double click to confirm</h1>
+
+        <select name="" id="select-menu">
+            <option value="0">Appetizer</option>
+            <option value="1">Cold Plates</option>
+            <option value="2">Sashimi</option>
+            <option value="3">Signature Rolls</option>
+            <option value="4">Vegan Rolls</option>
+        </select>
 
         <div id="div-add-items">
             <label for="name">Name</label>
@@ -58,97 +64,296 @@
         </div>
 
         <div class="menu-container grid-container" id="menu-container-id">
-            
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 1</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
+            <div class="food-section">
+                <h1>Appetizer</h1>
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Edamame</h3>
+                        <span class="menu-description">Steamed young soybeans in pods, lightly seasoned with a pinch of salt. A subtle nutty flavor with a soft, firm bite texture.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$5.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Edamame', 5.99, 'Steamed young soybeans in pods, lightly seasoned with a pinch of salt. A subtle nutty flavor with a soft, firm bite texture.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['sushi 1', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Scallion Pancakes</h3>
+                        <span class="menu-description">A pancake made with scallions. Chewy, flaky, and savory.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$7.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Scallion Pancakes', 7.99, 'A pancake made with scallions. Chewy, flaky, and savory.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 2</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Shrimp Tempura</h3>
+                        <span class="menu-description">A light, crispy coating. Lightly battered and deep fried shrimp.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$8.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Shrimp Tempura', 8.99, 'A light, crispy coating. Lightly battered and deep fried shrimp.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$50.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['sushi 2', 50.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Vegetable Tempura</h3>
+                        <span class="menu-description">A light, crispy coating. Lightly battered and deep fried sweet potato.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$8.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Vegetable Tempura', 8.99, 'A light, crispy coating. Lightly battered and deep fried sweet potato.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 3</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['sushi 3', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 4</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['sushi 4', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 5</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['sushi 5', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 6</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
-                </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['sushi 6', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Soup</h3>
+                        <span class="menu-description">Miso or Clear Soup.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$4.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Soup', 4.99, 'Miso or Clear Soup.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
             </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 7</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
+
+            <div class="food-section">
+                <h1>Cold Plates</h1>
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Kani Salad</h3>
+                        <span class="menu-description">Shredded crab sticks with Japanese mayonnaise (Kewpie) and siracha. The salad is tossed with tobiko and panko breadcrumbs.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$6.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Kani Salad', 6.99, 'Shredded crab sticks with a homemade, mayo-based dressing made from Japanese mayonnaise (Kewpie). The dressing is spiced with sriracha, and the salad is tossed with tobiko and panko breadcrumbs.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$12.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['sushi 7', 12.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Seaweed Salad</h3>
+                        <span class="menu-description">Wakame seaweed mixed with sesame seeds, vinegar, and sesame oil.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$6.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Seaweed Salad', 6.99, 'Wakame seaweed mixed with sesame seeds, vinegar, and sesame oil.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Avocado Salad</h3>
+                        <span class="menu-description">Sliced avocado is topped with a bright dressing of rice vinegar, soy sauce, and sesame oil.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$8.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Avocado Salad', 8.99, 'Sliced avocado is topped with a bright dressing of rice vinegar, soy sauce, and sesame oil.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Ahi Tuna Nachos</h3>
+                        <span class="menu-description">Made with seared sesame seed crusted tuna, deep-fried wonton pieces, and other toppings.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$12.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Ahi Tuna Nachos', 12.99, 'Made with seared sesame seed crusted tuna, deep-fried wonton pieces, and other toppings.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Cold Sesame Noodles</h3>
+                        <span class="menu-description">Sweet and savory richly flavored sauce on top of thick egg noodle with crunchy peanuts and sesame seeds.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$7.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Cold Sesame Noodles', 7.99, 'Sweet and savory richly flavored sauce on top of thick egg noodle with crunchy peanuts and sesame seeds.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
             </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">sushi 8</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
+
+            <div class="food-section">
+                <h1>Sashimi</h1>
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Salmon</h3>
+                        <span class="menu-description">2 pcs</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$2.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Salmon', 2.99, '2 pcs', 1])">ADD TO CART</button>
+                    </div>
                 </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['sushi 8', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Spanish Mackeral</h3>
+                        <span class="menu-description">2 pcs</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$2.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Spanish Mackeral', 2.99, '2 pcs', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Eel</h3>
+                        <span class="menu-description">2 pcs</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$2.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Eel', 2.99, '2 pcs', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">White Tuna</h3>
+                        <span class="menu-description">2 pcs</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$2.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['White Tuna', 2.99, '2 pcs', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Yellow Tail</h3>
+                        <span class="menu-description">2 pcs</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$2.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Yellow Tail', 2.99, '2 pcs', 1])">ADD TO CART</button>
+                    </div>
                 </div>
             </div>
-            <div class="menu-item">
-                <div class="menu-details">
-                    <h3 class="menu-name">big sushi</h3>
-                    <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
+
+            <div class="food-section">
+                <h1>Signature Rolls</h1>
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Salmon Squared Roll</h3>
+                        <span class="menu-description">Salmon tempura roll with Salmon on top.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$13.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Salmon Squared Roll', 13.99, 'Salmon tempura roll with Salmon on top.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
-                <div class="menu-tag">
-                    <span class="menu-price">$52.99</span>
-                    <button class="BTN-ADD" onclick="addItem(['big sushi', 52.99, 'A fine piece of sushi with rice and fish wrapped in kelp.', 1])">ADD TO CART</button>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Spicier Tuna Roll</h3>
+                        <span class="menu-description">Traditional Spicy Tuna Roll with cucumber, avocado, and jalapeño pepper.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$10.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Spicier Tuna Roll', 10.99, 'Traditional Spicy Tuna Roll with cucumber, avocado, and jalapeño pepper.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Lemon Roll</h3>
+                        <span class="menu-description">Spicy krab, avocado, cucumber. On top: Salmon with thin lemon slices, cilantro, sriracha sauce, ponzu sauce.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$14.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Lemon Roll', 14.99, 'Spicy krab, avocado, cucumber. On top: Salmon with thin lemon slices, cilantro, sriracha sauce, ponzu sauce.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Corn Roll</h3>
+                        <span class="menu-description">A fine piece of sushi with rice and corn wrapped in kelp.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$15.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Southern Roll', 15.99, 'A fine piece of sushi with rice and corn wrapped in kelp.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">House Special Roll</h3>
+                        <span class="menu-description">Spicy Tuna, Salmon, with tobiko and kani.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$18.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['House Special Roll', 18.99, 'Spicy Tuna, Salmon, with tobiko and kani.', 1])">ADD TO CART</button>
+                    </div>
                 </div>
             </div>
+
+            <div class="food-section">
+                <h1>Vegan Rolls</h1>
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Fried Tofu Roll</h3>
+                        <span class="menu-description">A fine piece of sushi with rice and tofu wrapped in kelp.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$6.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Fried Tofu Roll', 6.99, 'A fine piece of sushi with rice and tofu wrapped in kelp.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Lemongrass Tofu Roll</h3>
+                        <span class="menu-description">A fine piece of sushi with rice and lemongrass tofu wrapped in kelp.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$9.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Lemongrass Tofu Roll', 9.99, 'A fine piece of sushi with rice and lemongrass tofu wrapped in kelp.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Peanut Tofu Roll</h3>
+                        <span class="menu-description">A fine piece of sushi with rice and tofu and peanutbutter wrapped in kelp. Topped with peanuts.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$8.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Peanut Tofu Roll', 9.99, 'A fine piece of sushi with rice and tofu and peanutbutter wrapped in kelp. Topped with peanuts.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">Kani Roll</h3>
+                        <span class="menu-description">A fine piece of sushi with rice and kani wrapped in kelp. Topped with tobiko.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$11.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['Kani Roll', 11.99, 'A fine piece of sushi with rice and kani wrapped in kelp. Topped with tobiko.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">California Roll</h3>
+                        <span class="menu-description">A fine piece of sushi with crab and avocado wrapped in kelp and rice.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$6.99</span>
+                        <button class="BTN-ADD" onclick="addItem(['California', 6.99, 'A fine piece of sushi with crab and avocado wrapped in kelp and rice.', 1])">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 

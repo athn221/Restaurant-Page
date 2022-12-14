@@ -188,7 +188,7 @@ let items = [
 ];
 
 if (localStorage.getItem('items') === null) {
-	localStorage.setItem('items', JSON.stringify(items));
+  localStorage.setItem('items', JSON.stringify(items));
 }
 
 let itemStorage = JSON.parse(localStorage.getItem('items'));
@@ -226,9 +226,9 @@ function updateCart() {
             <button class="BTN-REMOVE" onclick="removeItem(${i})" type="button">REMOVE</button>
         </div>
         `;
-	}
-	totalCost();
-};
+  }
+  totalCost();
+}
 
 function changeQuantity() {
   let cartQuantityInput = document.getElementsByClassName(
@@ -247,16 +247,11 @@ function changeQuantity() {
 }
 
 function totalCost() {
-  console.log(cartArr)
   for (i = 0; i < cartArr.length; i++) {
     let cartPrice = cartArr[i][1] + cartArr[i][1] * 0.06;
-    console.log(cartPrice);
     let numberOfItems = cartArr[i][3];
-    console.log(numberOfItems);
     let finalPrice = cartPrice * numberOfItems;
-    console.log(finalPrice);
     totalPrice = finalPrice + totalPrice;
-    console.log(totalPrice);
   }
   return (price.innerHTML = '$' + parseFloat(totalPrice).toFixed(2));
 }
@@ -315,8 +310,8 @@ function login() {
   let username = document.getElementById('username').value;
   let password = document.getElementById('password').value;
 
-	let usernameCustomer = localStorage.getItem('username');
-	let passwordCustomer = localStorage.getItem('password');
+  let usernameCustomer = localStorage.getItem('username');
+  let passwordCustomer = localStorage.getItem('password');
 
   if (usernameCustomer == username && passwordCustomer == password) {
     alert('Welcome');
@@ -332,14 +327,12 @@ function login() {
 
 function adminMenu() {
   let foodSection = document.getElementsByClassName('food-section');
-  console.log(foodSection);
   let categories = ['Appetizer', 'Cold Plates', 'Sashimi', 'Signature Rolls', 'Vegan Rolls']
   for (i = 0; i < foodSection.length; i++) {
     foodSection[i].innerHTML = `<h1>${categories[i]}</h1>`;
   }
   for (i = 0; i < itemStorage.length; i++) {
     for (j=0;j<itemStorage[i].length;j++) {
-      console.log(itemStorage[i][j])
       foodSection[i].innerHTML += `
 
         <div class="menu-item">

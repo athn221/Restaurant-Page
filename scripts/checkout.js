@@ -8,7 +8,8 @@ $(document).ready(function () {
 	$('input[value="15"]').prop('checked', true);
 
 	// display tip dollar amount next to tip percentage radio buttons
-	let checkoutTotal = Number($('.checkout-subtotal').text()) + Number($('.checkout-tax').text());
+	let checkoutTotal =
+		Number($('.checkout-subtotal').text()) + Number($('.checkout-tax').text());
 
 	function displayTipAmount() {
 		document.querySelectorAll('input[name=tip]').forEach((e) => {
@@ -59,12 +60,13 @@ $('input[name=tip]').change(() => {
 function updateTip() {
 	let tipPercent = $('input[name=tip]:checked').val();
 	let tipAmount;
-	console.log(tipPercent)
+	console.log(tipPercent);
 	if (tipPercent === 'other') {
 		tipAmount = Number($('#tip-other').val());
 	} else {
 		// tip amount from subtotal + tax
-		let checkoutTotal = Number($('.checkout-subtotal').text()) + Number($('.checkout-tax').text());
+		let checkoutTotal =
+			Number($('.checkout-subtotal').text()) + Number($('.checkout-tax').text());
 		tipAmount = checkoutTotal * (tipPercent / 100);
 	}
 	console.log(tipAmount);
@@ -143,8 +145,6 @@ function displayCartItems() {
 	calculateTotals();
 }
 
-
-
 // calculate the subtotal, tax, tip and total
 function calculateTotals() {
 	let cartItems = JSON.parse(localStorage.getItem('cart'));
@@ -190,4 +190,4 @@ function toOrderComplete() {
 	localStorage.setItem('time', date.toLocaleTimeString());
 
 	window.location.href = 'order-complete.html';
-  }
+}

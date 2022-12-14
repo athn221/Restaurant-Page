@@ -155,6 +155,8 @@ function removeItem(item) {
 
 updateCart();
 
+
+
 /* ---------- Login Signup + Admin Login Signup ---------- */
 
 // this is just setting up some login stuff for the email

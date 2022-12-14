@@ -1,8 +1,3 @@
-const {moduleExpression} = require('@babel/types');
-
-// declare export module
-module.exports = {};
-
 /* ---------- Cart ---------- */
 
 let cart = document.getElementById('cart');
@@ -15,76 +10,198 @@ let price = document.getElementsByClassName('cart-total-price')[0];
 let tax = document.getElementsByClassName('cart-total-tax');
 
 let items = [
-	[
-		'sushi 1',
-		52.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
-	[
-		'sushi 2',
-		50.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
-	[
-		'sushi 3',
-		52.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
-	[
-		'sushi 4',
-		52.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
-	[
-		'sushi 5',
-		52.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
-	[
-		'sushi 6',
-		52.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
-	[
-		'sushi 7',
-		12.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
-	[
-		'sushi 8',
-		52.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
-	[
-		'big sushi',
-		52.99,
-		'A fine piece of sushi with rice and fish wrapped in kelp.',
-		1,
-	],
+  [[
+    'Edamame',
+    5.99,
+    'Steamed young soybeans in pods, lightly seasoned with a pinch of salt. A subtle nutty flavor with a soft, firm bite texture.',
+    1,
+    'appetizer'
+  ],
+  [
+    'Scallion Pancakes',
+    7.99,
+    'A pancake made with scallions. Chewy, flaky, and savory.',
+    1,
+    'appetizer'
+  ],
+  [
+    'Shrimp Tempura',
+    8.99,
+    'A light, crispy coating. Lightly battered and deep fried shrimp.',
+    1,
+    'appetizer'
+  ],
+  [
+    'Vegetable Tempura',
+    8.99,
+    'A light, crispy coating. Lightly battered and deep fried sweet potato.',
+    1,
+    'appetizer'
+  ],
+  [
+    'Soup',
+    5.99,
+    'Miso or Clear Soup.',
+    1,
+    'appetizer'
+  ]],
+  [[
+    'Kani Salad',
+    6.99,
+    'Shredded crab sticks with Japanese mayonnaise (Kewpie) and siracha. The salad is tossed with tobiko and panko breadcrumbs.',
+    1,
+    'cold-plates'
+  ],
+  [
+    'Seaweed Salad',
+    6.99,
+    'Wakame seaweed mixed with sesame seeds, vinegar, and sesame oil.',
+    1,
+    'cold-plates'
+  ],
+  [
+    'Avocado Salad',
+    8.99,
+    'Sliced avocado is topped with a bright dressing of rice vinegar, soy sauce, and sesame oil.',
+    1,
+    'cold-plates'
+  ],
+  [
+    'Ahi Tuna Nachos',
+    12.99,
+    'Made with seared sesame seed crusted tuna, deep-fried wonton pieces, and other toppings.',
+    1,
+    'cold-plates'
+  ],
+  [
+    'Cold Sesame Noodles',
+    7.99,
+    'Sweet and savory richly flavored sauce on top of thick egg noodle with crunchy peanuts and sesame seeds.',
+    1,
+    'cold-plates'
+  ]],
+  [[
+    'Salmon',
+    2.99,
+    '2 pcs',
+    1,
+    'sashimi'
+  ],
+  [
+    'Spanish Mackeral',
+    2.99,
+    '2 pcs',
+    1,
+    'sashimi'
+  ],
+  [
+    'Eel',
+    2.99,
+    '2 pcs',
+    1,
+    'sashimi'
+  ],
+  [
+    'White Tuna',
+    2.99,
+    '2 pcs',
+    1,
+    'sashimi'
+  ],
+  [
+    'Yellow Tail',
+    2.99,
+    '2 pcs',
+    1,
+    'sashimi'
+  ]],
+  [[
+    'Salmon Squared Rolls',
+    13.99,
+    'Salmon tempura roll with Salmon on top.',
+    1,
+    'rolls'
+  ],
+  [
+    'Spicier Tuna Roll',
+    10.99,
+    'Traditional Spicy Tuna Roll with cucumber, avocado, and jalapeño pepper.',
+    1,
+    'rolls'
+  ],
+  [
+    'Lemon Roll',
+    14.99,
+    'Spicy krab, avocado, cucumber. On top: Salmon with thin lemon slices, cilantro, sriracha sauce, ponzu sauce.',
+    1,
+    'rolls'
+  ],
+  [
+    'Corn Roll',
+    15.99,
+    'A fine piece of sushi with rice and corn wrapped in kelp.',
+    1,
+    'rolls'
+  ],
+  [
+    'House Special Roll',
+    18.99,
+    'Spicy Tuna, Salmon, with tobiko and kani.',
+    1,
+    'rolls'
+  ]],
+  [[
+    'Fried Tofu Roll',
+    6.99,
+    'A fine piece of sushi with rice and tofu wrapped in kelp.',
+    1,
+    'vegan-rolls'
+  ],
+  [
+    'Tofu Lemongrass Roll',
+    9.99,
+    'A fine piece of sushi with rice and tofu and peanutbutter wrapped in kelp. Topped with peanuts.',
+    1,
+    'vegan-rolls'
+  ],
+  [
+    'Peanut Tofu Roll',
+    8.99,
+    'A fine piece of sushi with rice and tofu and peanutbutter wrapped in kelp. Topped with peanuts.',
+    1,
+    'vegan-rolls'
+  ],
+  [
+    'Kani Roll',
+    11.99,
+    'A fine piece of sushi with rice and kani wrapped in kelp. Topped with tobiko.',
+    1,
+    'vegan-rolls'
+  ],
+  [
+    'California Roll',
+    6.99,
+    'A fine piece of sushi with crab and avocado wrapped in kelp and rice.',
+    1,
+    'vegan-rolls'
+  ]],
 ];
+
 if (localStorage.getItem('items') === null) {
 	localStorage.setItem('items', JSON.stringify(items));
 }
 
 let itemStorage = JSON.parse(localStorage.getItem('items'));
 
-module.exports.shoppingCart = function shoppingCart() {
-	if (isVisible == false) {
-		isVisible = true;
-		cart.classList.replace('shopping-cart', 'sliding-cart');
-	} else if (isVisible == true) {
-		isVisible = false;
-		cart.classList.replace('sliding-cart', 'shopping-cart');
-	}
-};
+function shoppingCart() {
+  if (isVisible == false) {
+    isVisible = true;
+    cart.classList.replace('shopping-cart', 'sliding-cart');
+  } else if (isVisible == true) {
+    isVisible = false;
+    cart.classList.replace('sliding-cart', 'shopping-cart');
+  }
+}
 
 // info for the array for organiziation purposes
 // 0 - name
@@ -92,11 +209,11 @@ module.exports.shoppingCart = function shoppingCart() {
 // 2 - description
 // 3 - quantity selector
 
-module.exports.updateCart = function updateCart() {
-	menuItem.innerHTML = '';
-	totalPrice = 0;
-	for (i = 0; i < cartArr.length; i++) {
-		menuItem.innerHTML += `
+function updateCart() {
+  menuItem.innerHTML = '';
+  totalPrice = 0;
+  for (i = 0; i < cartArr.length; i++) {
+    menuItem.innerHTML += `
         <div class="menu-item">
             <div class="menu-details">
                 <h3 class="menu-name">${cartArr[i][0]}</h3>
@@ -113,135 +230,154 @@ module.exports.updateCart = function updateCart() {
 	totalCost();
 };
 
-module.exports.changeQuantity = function changeQuantity() {
-	let cartQuantityInput = document.getElementsByClassName('cart-quantity-input');
-	for (i = 0; i < cartQuantityInput.length; i++) {
-		if (cartQuantityInput[i].value < 1) {
-			cartQuantityInput[i].value = 1;
-		}
-		let popElement = cartQuantityInput[i].value;
-		cartArr[i].pop();
-		cartArr[i].push(parseInt(popElement));
-	}
-	totalPrice = 0;
-	totalCost();
-};
+function changeQuantity() {
+  let cartQuantityInput = document.getElementsByClassName(
+    'cart-quantity-input',
+  );
+  for (i = 0; i < cartQuantityInput.length; i++) {
+    if (cartQuantityInput[i].value < 1) {
+      cartQuantityInput[i].value = 1;
+    }
+    let popElement = cartQuantityInput[i].value;
+    cartArr[i].pop();
+    cartArr[i].push(parseInt(popElement));
+  }
+  totalPrice = 0;
+  totalCost();
+}
 
-module.exports.totalCost = function totalCost() {
-	for (i = 0; i < cartArr.length; i++) {
-		let cartPrice = cartArr[i][1] + cartArr[i][1] * 0.06;
-		let numberOfItems = cartArr[i][3];
-		let finalPrice = cartPrice * numberOfItems;
-		totalPrice = finalPrice + totalPrice;
-	}
-	return (price.innerHTML = '$' + parseFloat(totalPrice).toFixed(2));
-};
+function totalCost() {
+  console.log(cartArr)
+  for (i = 0; i < cartArr.length; i++) {
+    let cartPrice = cartArr[i][1] + cartArr[i][1] * 0.06;
+    console.log(cartPrice);
+    let numberOfItems = cartArr[i][3];
+    console.log(numberOfItems);
+    let finalPrice = cartPrice * numberOfItems;
+    console.log(finalPrice);
+    totalPrice = finalPrice + totalPrice;
+    console.log(totalPrice);
+  }
+  return (price.innerHTML = '$' + parseFloat(totalPrice).toFixed(2));
+}
 
-module.exports.addItem = function addItem(item) {
-	check = false;
-	for (i = 0; i < cartArr.length; i++) {
-		if (cartArr[i][0] == itemStorage[item][0]) {
-			check = true;
-		}
-	}
-	if (check == true) {
-		alert('Item is in cart!');
-	} else {
-		cartArr.push(itemStorage[item]);
-		updateCart();
-		alert('Item added');
-	}
-};
+function addItem(category, item) {
+  check = false;
+  for (i = 0; i < cartArr.length; i++) {
+    for (j=0;j<itemStorage[i].length;j++) {
+      if (cartArr[i][0] == itemStorage[category][item][0]) {
+        check = true;
+      }
+    }
+  }
+  if (check == true) {
+    alert('Item is in cart!');
+  } else {
+    cartArr.push(itemStorage[category][item]);
+    updateCart();
+    alert('Item added');
+  }
+}
 
-module.exports.removeItem = function removeItem(item) {
-	cartArr.splice(item, 1);
-	updateCart();
-};
+function removeItem(item) {
+  cartArr.splice(item, 1);
+  updateCart();
+}
 
 updateCart();
 
 /* ---------- Login Signup + Admin Login Signup ---------- */
 
-// this is just setting up some login stuff for the email
-module.exports.signup = function signup() {
-	let email = document.getElementById('email').value;
-	let username = document.getElementById('username').value;
-	let password = document.getElementById('password').value;
-	let passwordconfirm = document.getElementById('password-confirm').value;
+function signup() {
+  let email = document.getElementById('email').value
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
+  let passwordconfirm = document.getElementById('password-confirm').value;
 
-	if (passwordconfirm == password) {
-		if (username == 'admin') {
-			alert('no');
-		} else {
-			localStorage.setItem('username', username);
-			localStorage.setItem('password', password);
-		}
-	} else {
-		alert("Passwords don't match");
-	}
-};
+  if (passwordconfirm == password) {
+    if (username == 'admin') {
+      alert("Username unavailable. Please try again.")
+    } else {
+      localStorage.setItem('email', email)
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+    }
+  } else {
+    alert("Passwords don't match");
+  }
+}
 
-module.exports.login = function login() {
-	let username = document.getElementById('username').value;
-	let password = document.getElementById('password').value;
+
+
+function login() {
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
 
 	let usernameCustomer = localStorage.getItem('username');
 	let passwordCustomer = localStorage.getItem('password');
 
-	if (usernameCustomer == username && passwordCustomer == password) {
-		alert('Nice');
-		window.location.href = 'menu.html';
-	} else if (username === 'admin' && password === 'admin') {
-		window.location.href = 'admin-menu.html';
-	} else {
-		alert('no');
-	}
-};
+  if (usernameCustomer == username && passwordCustomer == password) {
+    alert('Welcome');
+    window.location.href = 'menu.html';
+  } else if (username === 'admin' && password === 'admin') {
+    window.location.href = 'admin-menu.html';
+  } else {
+    alert('Incorrect info submitted.');
+  }
+}
 
 /* ---------- Admin Editing Menu---------- */
 
-module.exports.adminMenu = function adminMenu() {
-	let menuContainer = document.getElementById('menu-container-id');
-	menuContainer.innerHTML = '';
-	for (i = 0; i < itemStorage.length; i++) {
-		menuContainer.innerHTML += `
+function adminMenu() {
+  let foodSection = document.getElementsByClassName('food-section');
+  console.log(foodSection);
+  let categories = ['Appetizer', 'Cold Plates', 'Sashimi', 'Signature Rolls', 'Vegan Rolls']
+  for (i = 0; i < foodSection.length; i++) {
+    foodSection[i].innerHTML = `<h1>${categories[i]}</h1>`;
+  }
+  for (i = 0; i < itemStorage.length; i++) {
+    for (j=0;j<itemStorage[i].length;j++) {
+      console.log(itemStorage[i][j])
+      foodSection[i].innerHTML += `
 
         <div class="menu-item">
             <div class="menu-details">
-                <h3 class="menu-name">${itemStorage[i][0]}</h3>
-                <span class="menu-description">${itemStorage[i][2]}</span>
+                <h3 class="menu-name">${itemStorage[i][j][0]}</h3>
+                <span class="menu-description">${itemStorage[i][j][2]}</span>
             </div>
             <div class="menu-tag">
-                <span class="menu-price">$${itemStorage[i][1]}</span>
-                <button class="BTN-ADD" onclick='addItem(${i})'>ADD TO CART</button>
+                <span class="menu-price">$${itemStorage[i][j][1]}</span>
+                <button class="BTN-ADD" onclick='addItem(${i}, ${j})'>ADD TO CART</button>
             </div>
         </div>
         `;
-	}
-};
+    }
+  }
+}
 
-module.exports.adminRemoveItems = function adminRemoveItems() {
-	let itemNameInput = document.getElementById('input-remove').value;
-	let length = itemStorage.length;
-	for (i = 0; i < length; i++) {
-		if (itemStorage[i][0] === itemNameInput) {
-			itemStorage.splice(i, 1);
-		}
-	}
-	localStorage.setItem('items', JSON.stringify(itemStorage));
-	itemStorage = JSON.parse(localStorage.getItem('items'));
-	adminMenu();
-};
+function adminRemoveItems() {
+  let itemNameInput = document.getElementById('input-remove').value;
+  let length = itemStorage.length;
+  for (i = 0; i < length; i++) {
+    if (itemStorage[i][0] === itemNameInput) {
+      itemStorage.splice(i, 1);
+    }
+  }
+  localStorage.setItem('items', JSON.stringify(itemStorage));
+  itemStorage = JSON.parse(localStorage.getItem('items'));
+  adminMenu();
+}
 
-module.exports.adminAddItems = function adminAddItems() {
-	let inputName = document.getElementById('input-name').value;
-	let inputPrice = parseInt(document.getElementById('input-price').value);
-	let inputDescription = document.getElementById('input-description').value;
-	let newItemArr = [inputName, inputPrice, inputDescription];
+function adminAddItems() {
+  let inputName = document.getElementById('input-name').value;
+  let inputPrice = parseInt(document.getElementById('input-price').value);
+  let inputDescription = document.getElementById('input-description').value;
+  let selectMenu = parseInt(document.getElementById('select-menu').value);
+  let newItemArr = [inputName, inputPrice, inputDescription, 1];
 
-	itemStorage.unshift(newItemArr);
-	localStorage.setItem('items', JSON.stringify(itemStorage));
-	adminMenu();
-};
+  itemStorage[selectMenu].unshift(newItemArr);
+  localStorage.setItem('items', JSON.stringify(itemStorage));
+  adminMenu();
+}
 
 adminMenu();

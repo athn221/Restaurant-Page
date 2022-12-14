@@ -1,133 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/stylesheets/style.css">
-    <link rel="stylesheet" href="resources/stylesheets/checkout.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="resources/stylesheets/style.css" />
+    <link rel="stylesheet" href="resources/stylesheets/checkout.css" />
     <title>Checkout Baka</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="section-checkout">
-        <div class="row">
-            <h2>Checkout</h2>
-        </div>
-        <div class="checkout-container">
-            <div class="col">
-                <div class="row checkout-greeting">
-                    <p>Almost there! Just a few small details <br>so we can start your order</p>
-                </div>
-                <div class="payment-options">
-                    <h3>Payment Method</h3>
-                    <div>
-                        <label>
-                            <input type="radio" name="payment-method" value="card" checked>
-                            Debit/Credit Card
-                        </label>
-                        <label>
-                            <input type="radio" name="payment-method" value="cash">
-                            Cash
-                        </label>
-                    </div>
-                </div>
-                <form class="card-info">
-                    <div class="row">
-                        <label for="card-number">Card Number</label>
-                        <input type="number" name="card-number" id="card-number" placeholder="1234 5678 9012 3456">
-                    </div>
-                    <div class="row">
-                        <label for="card-name">Name on Card</label>
-                        <input type="text" name="card-name" id="card-name" placeholder="John Doe">
-                    </div>
-                    <div class="row">
-                        <label for="card-expiration">Expiration Date</label>
-                        <input type="text" name="card-expiration" id="card-expiration" placeholder="MMYY">
-                    </div>
-                    <div class="row">
-                        <label for="card-cvv">CVV</label>
-                        <input type="text" name="card-cvv" id="card-cvv" placeholder="123">
-                    </div>
-                </form>
-                <div class="card-tip">
-                    <p>Care to leave a tip for your sushirista?</p>
-                    <div class="row">
-                        <label>
-                            <input type="radio" name="tip" value="15">
-                            15%
-                        </label>
-                        <label>
-                            <input type="radio" name="tip" value="20">
-                            20%
-                        </label>
-                        <label>
-                            <input type="radio" name="tip" value="25">
-                            25%
-                        </label>
-                        <div class="tip-other">
-                            <label>
-                                <input type="radio" name="tip" value="other" id="tip-other-radio">
-                                Other
-                            </label>
-                            <input name="tip-other" id="tip-other" placeholder="$" maxlength="6" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="cash-info">
-                    <span>
-                        Don't forget to bring your receipt to the cashier <br>and consider leaving a tip for your sushirista!
-                    </span>
-                </div>
+      <div class="row">
+        <h2>Checkout</h2>
+      </div>
+      <div class="checkout-container">
+        <div class="col">
+          <div class="row checkout-greeting">
+            <p>
+              Almost there! Just a few small details <br />so we can start your
+              order
+            </p>
+          </div>
+          <div class="payment-options">
+            <h3>Payment Method</h3>
+            <div>
+              <label>
+                <input
+                  type="radio"
+                  name="payment-method"
+                  value="card"
+                  checked
+                />
+                Debit/Credit Card
+              </label>
+              <label>
+                <input type="radio" name="payment-method" value="cash" />
+                Cash
+              </label>
             </div>
-            <div class="col">
-                <div class="row">
-                    <h3>Order Summary</h3>
-                </div>
-                <div class="cart-contents">
-                </div>
-                <div class="checkout-totals">
-                    <div class="row">
-                        <div class="col">
-                            <p>Subtotal</p>
-                        </div>
-                        <div class="col">
-                            <p class="checkout-subtotal"></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>Tax</p>
-                        </div>
-                        <div class="col">
-                            <p class="checkout-tax"></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>Tip</p>
-                        </div>
-                        <div class="col">
-                            <p class="checkout-tip"></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>Total</p>
-                        </div>
-                        <div class="col">
-                            <p class="checkout-total">100.00</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <button class="checkout-btn">Checkout</button>
-                    </div>
-                </div>
+          </div>
+          <form class="card-info">
+            <div class="row">
+              <label for="card-number">Card Number</label>
+              <input
+                type="number"
+                name="card-number"
+                id="card-number"
+                placeholder="1234 5678 9012 3456"
+              />
+            </div>
+            <div class="row">
+              <label for="card-name">Name on Card</label>
+              <input
+                type="text"
+                name="card-name"
+                id="card-name"
+                placeholder="John Doe"
+              />
+            </div>
+            <div class="row">
+              <label for="card-expiration">Expiration Date</label>
+              <input
+                type="text"
+                name="card-expiration"
+                id="card-expiration"
+                placeholder="MMYY"
+              />
+            </div>
+            <div class="row">
+              <label for="card-cvv">CVV</label>
+              <input
+                type="text"
+                name="card-cvv"
+                id="card-cvv"
+                placeholder="123"
+              />
+            </div>
+          </form>
+          <div class="card-tip">
+            <p>Care to leave a tip for your sushirista?</p>
+            <div class="row">
+              <label>
+                <input type="radio" name="tip" value="15" />
+                15%
+              </label>
+              <label>
+                <input type="radio" name="tip" value="20" />
+                20%
+              </label>
+              <label>
+                <input type="radio" name="tip" value="25" />
+                25%
+              </label>
+              <div class="tip-other">
+                <label>
+                  <input
+                    type="radio"
+                    name="tip"
+                    value="other"
+                    id="tip-other-radio"
+                  />
+                  Other
+                </label>
+                <input
+                  name="tip-other"
+                  id="tip-other"
+                  placeholder="$"
+                  maxlength="6"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+          <div class="cash-info">
+            <span>
+              Don't forget to bring your receipt to the cashier <br />and
+              consider leaving a tip for your sushirista!
+            </span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <h3>Order Summary</h3>
+          </div>
+          <div class="cart-contents"></div>
+          <div class="checkout-totals">
+            <div class="row">
+              <div class="col">
+                <p>Subtotal</p>
+              </div>
+              <div class="col">
+                <p class="checkout-subtotal"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>Tax</p>
+              </div>
+              <div class="col">
+                <p class="checkout-tax"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>Tip</p>
+              </div>
+              <div class="col">
+                <p class="checkout-tip"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>Total</p>
+              </div>
+              <div class="col">
+                <p class="checkout-total"></p>
+              </div>
+            </div>
+            <div class="row">
+              <button class="checkout-btn">Checkout</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
 
     <script
       type="module"
@@ -142,6 +179,7 @@
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
       crossorigin="anonymous"
     ></script>
-    <script src="resources/index.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/checkout.js"></script>
   </body>
 </html>

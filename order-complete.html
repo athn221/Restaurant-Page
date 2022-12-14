@@ -6,44 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="resources/stylesheets/style.css" />
     <link rel="stylesheet" href="resources/stylesheets/home-style.css" />
-    <title>Customer Menu</title>
+    <title>Order Complete!</title>
   </head>
 
   <body>
     <nav>
       <div class="logo">
-        <img src="resources/images/client-assets/sushi-baka-logo.png" alt="" />
+        <img src="resources/images/sushi baka logosushi-baka-logo.png" alt="" />
       </div>
       <div class="nav-links">
         <a href="login.html">sign in</a>
       </div>
     </nav>
     <main>
-      <img
-        src="resources/images/stock-images/top-view-sushi-assortment.jpg"
-        alt="sushi in chopsticks"
-        class="hero-image"
-      />
-      <div class="hero">
-        <h1 class="title">Always fresh. That's just how we roll.</h1>
-        <p class="subtitle">
-          sushi baka is about to be your new favorite place to eat. So let's
-          make this o-fish-al.
-        </p>
+      <div class="order-message">
+        <h2>Your order is in!</h2>
+        <p>We'll start <i>maki</i>-ing your order soon</p>
+        <img src="" alt="" />
       </div>
-      <div class="call-to-action">
-        <p>Come get some sushi.... b-baka!</p>
-        <div class="call-to-action-container">
-          <a class="call-to-action-btn" href="signup.html">UwU</a>
-          <div class="blush blush-left"></div>
-          <div class="blush blush-right"></div>
+      <div class="order-receipt">
+        <div class="receipt-head">
+          <img src="" alt="" class="receipt-logo" />
+          <span class="receipt-date"></span>
+          <span class="receipt-time"></span>
+          <span class="receipt-checkout-time"></span>
+          <span class="receipt-name"></span>
+          <span class="receipt-payment-method"></span>
+        </div>
+        <div class="receipt-body">
+          <div class="receipt-items-purchased"></div>
+        </div>
+        <div class="receipt-totals">
+          <span class="receipt-subtotal"></span>
+          <span class="receipt-tax"></span>
+          <span class="receipt-tip"></span>
+          <span class="receipt-total"></span>
         </div>
       </div>
-      <img
-        src="resources/images/color-icons/sushi-color-1.png"
-        alt="sushi image"
-        class="sushi-cta-image"
-      />
     </main>
 
     <script
@@ -61,5 +60,6 @@
     ></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/home.js"></script>
+    <script src="scripts/order-complete.js"></script>
   </body>
 </html>

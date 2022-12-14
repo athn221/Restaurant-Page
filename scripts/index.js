@@ -354,7 +354,6 @@ function adminRemoveItems() {
   for (i = 0; i < length; i++) {
     let categoryLength = itemStorage[i].length
     for (j = 0; j < categoryLength; j++) {
-      console.log(itemStorage[i][j][0])
       if (itemStorage[i][j][0] === itemNameInput) {
         itemStorage[i].splice(j, 1)
         break

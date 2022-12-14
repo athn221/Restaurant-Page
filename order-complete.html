@@ -19,30 +19,30 @@
       </div>
     </nav>
     <main>
-        <div class="order-message">
-            <h2>Your order is in!</h2>
-            <p>We'll start <i>maki</i>-ing your order soon</p>
-            <img src="" alt="">
+      <div class="order-message">
+        <h2>Your order is in!</h2>
+        <p>We'll start <i>maki</i>-ing your order soon</p>
+        <img src="" alt="" />
+      </div>
+      <div class="order-receipt">
+        <div class="receipt-head">
+          <img src="" alt="" class="receipt-logo" />
+          <span class="receipt-date"></span>
+          <span class="receipt-time"></span>
+          <span class="receipt-checkout-time"></span>
+          <span class="receipt-name"></span>
+          <span class="receipt-payment-method"></span>
         </div>
-        <div class="order-receipt">
-            <div class="receipt-head">
-                <img src="" alt="" class="receipt-logo">
-                <span class="receipt-date"></span>
-                <span class="receipt-checkout-time"></span>
-                <span class="receipt-name"></span>
-                <span class="receipt-payment"></span>
-            </div>
-            <div class="receipt-body">
-                <div class="receipt-items-purchased">
-
-                </div>
-            </div>
-            <div class="receipt-totals">
-                <span class="receipt-subtotal"></span>
-                <span class="receipt-tax"></span>
-                <span class="receipt-total"></span>
-            </div>
+        <div class="receipt-body">
+          <div class="receipt-items-purchased"></div>
         </div>
+        <div class="receipt-totals">
+          <span class="receipt-subtotal"></span>
+          <span class="receipt-tax"></span>
+          <span class="receipt-tip"></span>
+          <span class="receipt-total"></span>
+        </div>
+      </div>
     </main>
 
     <script
@@ -60,5 +60,6 @@
     ></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/home.js"></script>
+    <script src="scripts/order-complete.js"></script>
   </body>
 </html>

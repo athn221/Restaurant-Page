@@ -280,3 +280,39 @@ form {
 input {
   width: 300px;
 }
+
+/* ---------- Cart ---------- */
+
+#cart {
+  height: fit-content;
+}
+
+#cart > .menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#cart > .menu-item > .menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+#cart h3 {
+  font-size: 20px;
+}
+
+#cart p,
+#cart span {
+  font-size: 14px;
+}
+
+#cart input {
+  width: 50px;
+}
+
+.cart-total {
+  padding: 20px 30px;
+}

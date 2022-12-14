@@ -1,5 +1,26 @@
+/* ---------- On Doc Load ---------- */
+$(document).ready(function () {
+	// if there isn't a menu in local storage, create one
+	if (localStorage.getItem('items') === null) {
+		localStorage.setItem('items', JSON.stringify(items));
+	};
+
+	//if there isn't a cart in local storage, create one
+	if (localStorage.getItem('cart') === null) {
+		localStorage.setItem('cart', JSON.stringify(cartArr));
+	}
+	
+	
+});
+
+
+
 /* ---------- Cart ---------- */
 
+
+
+
+// cart variables
 let cart = document.getElementById('cart');
 let isVisible = false;
 
@@ -8,7 +29,9 @@ let totalPrice = 0;
 let menuItem = document.getElementsByClassName('menu-item')[0];
 let price = document.getElementsByClassName('cart-total-price')[0];
 let tax = document.getElementsByClassName('cart-total-tax');
+let totalPrice = 0;
 
+// populate menu
 let items = [
   [[
     'Edamame',
@@ -187,12 +210,15 @@ let items = [
   ]],
 ];
 
+
 if (localStorage.getItem('items') === null) {
 	localStorage.setItem('items', JSON.stringify(items));
 }
 
 let itemStorage = JSON.parse(localStorage.getItem('items'));
 
+
+// toggle cart visibility
 function shoppingCart() {
   if (isVisible == false) {
     isVisible = true;
@@ -230,6 +256,8 @@ function updateCart() {
 	totalCost();
 };
 
+
+// when the quantity is changed, make sure it is not less than 1 and get the cart array from local storage, then update the quantity in the array and then update the cart
 function changeQuantity() {
   let cartQuantityInput = document.getElementsByClassName(
     'cart-quantity-input',
@@ -246,6 +274,7 @@ function changeQuantity() {
   totalCost();
 }
 
+// calculating the total cost of the cart
 function totalCost() {
   console.log(cartArr)
   for (i = 0; i < cartArr.length; i++) {
@@ -279,6 +308,8 @@ function addItem(category, item) {
   }
 }
 
+
+// remove items from the cart (okay this is a little obvious)
 function removeItem(item) {
   cartArr.splice(item, 1);
   updateCart();
@@ -311,6 +342,9 @@ function signup() {
 
 
 
+// verifying the login username and password
+// TODO - email login
+// TODO - change how the user info is stored in local storage
 function login() {
   let username = document.getElementById('username').value;
   let password = document.getElementById('password').value;
@@ -330,6 +364,10 @@ function login() {
 
 /* ---------- Admin Editing Menu---------- */
 
+
+/* ---------- Admin Controls ---------- */
+
+// building out th admin's menu
 function adminMenu() {
   let foodSection = document.getElementsByClassName('food-section');
   console.log(foodSection);
@@ -357,6 +395,7 @@ function adminMenu() {
   }
 }
 
+// remove items from the menu
 function adminRemoveItems() {
   let itemNameInput = document.getElementById('input-remove').value;
   let length = itemStorage.length;
@@ -370,6 +409,7 @@ function adminRemoveItems() {
   adminMenu();
 }
 
+// add items to the menu
 function adminAddItems() {
   let inputName = document.getElementById('input-name').value;
   let inputPrice = parseInt(document.getElementById('input-price').value);

@@ -81,6 +81,7 @@ input {
 
 /* * this is making sure firefox doesn't show arrows in the textbox */
 input[type="number"] {
+  -webkit-appearance: textfield;
   -moz-appearance: textfield;
 }
 

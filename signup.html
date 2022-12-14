@@ -8,44 +8,44 @@
     <link rel="stylesheet" href="resources/stylesheets/style.css" />
   </head>
   <body>
-    <form onsubmit="signup()">
-      <div class="form-content">
-        <label for="email">Email</label>
-        <input type="email" placeholder="Enter email" id="email" required />
+    <div class="form-container">
+      <form onsubmit="signup()">
+        <div class="form-content">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Enter email" id="email" required />
 
-        <label for="username">Username</label>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          id="username"
-          minlength="4"
-          required
-        />
+          <label for="username">Username</label>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            id="username"
+            minlength="4"
+            required
+          />
 
-        <p>Password Length: 8 Characters Minimum.</p>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            id="password"
+            minlength="8"
+            required
+          />
 
-        <label for="password">Password</label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          id="password"
-          minlength="8"
-          required
-        />
-
-        <label for="password">Confirm Password</label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          id="password-confirm"
-          minlength="8"
-          required
-        />
-      </div>
-
-      <a href="login.html">Have an account? Log in</a>
-      <button type="submit" class="btn-signup">Sign Up</button>
-    </form>
+          <label for="password">Confirm Password</label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            id="password-confirm"
+            minlength="8"
+            required
+          />
+          <p>Password Length: 8 Characters Minimum.</p>
+        </div>
+        <a href="login.html">Have an account? Log in</a>
+        <button type="submit" class="btn-signup">Sign Up</button>
+      </form>
+    </div>
     <script src="scripts/index.js"></script>
   </body>
 </html>

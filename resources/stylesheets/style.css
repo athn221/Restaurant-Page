@@ -39,8 +39,6 @@ a {
   text-decoration: none;
 }
 
-/* ---------- Header ---------- */
-
 /* ---------- Navbar ---------- */
 
 nav {
@@ -82,75 +80,9 @@ nav {
 
 /* ----- Header ----- */
 
-.space {
-  background-color: black;
-  height: 50vh;
-  background-color: #f2efe9;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(images/borgir.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-}
-
-header h1,
-p {
-  color: #f2efe9;
-  font-size: 200%;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 42%;
-}
-
-header a {
-  font-size: 150%;
-  color: #bfb48f;
-}
-
-.header-nav-bar {
-  display: flex;
-  justify-content: space-between;
-  text-transform: uppercase;
-  margin: 5% 15%;
-}
-
-header a:link {
-  text-decoration: none;
-}
-
-header a:visited {
-  text-decoration: none;
-}
-
-header a:hover {
-  color: #8a8166;
-  transition: 0.5s;
-}
-
-#div-add-items {
-  display: flex;
-  flex-direction: column;
-}
-
-#div-add-items {
-  display: flex;
-  flex-direction: column;
-}
-
 /* ---------- Footer ---------- */
 
 footer {
-  /* position:absolute; */
   bottom: 0;
   width: 100%;
   display: flex;
@@ -228,6 +160,31 @@ footer {
   color: #fffa70;
 }
 
+/* ----- Admin Mechanics ----- */
+
+#div-add-items {
+  display: flex;
+  flex-direction: column;
+}
+
+#admin-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+#admin-remove-section {
+  padding: 1%;
+  background-color: rgb(226, 226, 226);
+}
+
+#admin-add-section {
+  padding: 1%;
+  background-color: rgb(226, 226, 226);
+}
+
 /* ---------- Menu ---------- */
 
 .menu-container {
@@ -260,25 +217,39 @@ h3 {
 
 /* ---------- Login Sign up ---------- */
 
+/* sign up */
 form {
   background-color: rgb(249, 249, 249);
   width: 500px;
   height: 300px;
 }
 
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
 .form-content {
   display: flex;
   flex-direction: column;
-  width: 30%;
-}
-
-.login,
-.signup {
   width: fit-content;
 }
 
+#email, #username, #password, #password-confirm {
+  margin-bottom: 5%;
+}
+
+/* log in */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* boffum? */
+
 input {
-  width: 300px;
+  width: 500px;
 }
 
 /* ---------- Cart ---------- */

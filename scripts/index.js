@@ -352,8 +352,13 @@ function adminRemoveItems() {
   let itemNameInput = document.getElementById('input-remove').value;
   let length = itemStorage.length;
   for (i = 0; i < length; i++) {
-    if (itemStorage[i][0] === itemNameInput) {
-      itemStorage.splice(i, 1);
+    let categoryLength = itemStorage[i].length
+    for (j = 0; j < categoryLength; j++) {
+      console.log(itemStorage[i][j][0])
+      if (itemStorage[i][j][0] === itemNameInput) {
+        itemStorage[i].splice(j, 1)
+        break
+      }
     }
   }
   localStorage.setItem('items', JSON.stringify(itemStorage));

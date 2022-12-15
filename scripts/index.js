@@ -368,7 +368,7 @@ function adminRemoveItems() {
 // add items to the menu
 function adminAddItems() {
 	let inputName = document.getElementById('input-name').value;
-	let inputPrice = parseInt(document.getElementById('input-price').value);
+	let inputPrice = parseFloat(document.getElementById('input-price').value).toFixed(2);
 	let inputDescription = document.getElementById('input-description').value;
 	let selectMenu = parseInt(document.getElementById('select-menu').value);
 	let newItemArr = [inputName, inputPrice, inputDescription, 1];

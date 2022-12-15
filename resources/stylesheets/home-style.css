@@ -28,7 +28,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: var(--secondary-color);
-  padding: 1em 10%;
+  padding: .8em 8%;
 }
 
 .nav-links a {
@@ -60,8 +60,11 @@ main {
 
 .hero-image {
   grid-area: top-left;
-  width: 70%;
+  width: 60%;
   margin: auto;
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 4px var(--tertiary-color);
 }
 
 .hero {
@@ -71,9 +74,13 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 10%;
+  text-align: center;
 }
 
 .title {
+  margin-bottom: 20px;
+  font-size: 50px;
+  line-height: 1.2em;
 }
 
 .call-to-action p,
@@ -84,6 +91,7 @@ main {
 .sushi-cta-image {
   grid-area: bottom-right;
   margin: auto;
+  height: 50%;
 }
 
 .call-to-action {
@@ -97,11 +105,12 @@ main {
 }
 
 .call-to-action-container {
-  height: 220px;
+  height: 80px;
   align-items: center;
 }
 
 .call-to-action-btn {
+  height: 75px;
   display: block;
   padding: 20px 20px;
   border: none;
@@ -126,18 +135,19 @@ main {
   background-color: rgba(240, 128, 128, 0.541);
   box-shadow: 0 0 3px lightcoral;
   display: hidden;
+  pointer-events: none;
 }
 
 .blush-left {
   transform: rotate(18deg);
   position: relative;
-  top: -21%;
+  top: -35%;
   left: 10%;
 }
 
 .blush-right {
   transform: rotate(-18deg);
   position: relative;
-  top: -28%;
+  top: -55%;
   left: 58%;
 }

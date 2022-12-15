@@ -8,30 +8,32 @@
     <link rel="stylesheet" href="resources/stylesheets/style.css" />
   </head>
   <body>
-    <div class="login-container">
-      <div class="form-login">
-        <div class="form-content">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            id="username"
-            required
-          />
-
-          <label for="password">Password</label>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            id="password"
-            required
-          />
+    <main class="sign-up-in-main">
+      <div class="form-container">
+        <div class="form-sign-up-in">
+          <div class="form-content">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              id="username"
+              required
+            />
+  
+            <label for="password">Password</label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              id="password"
+              required
+            />
+          </div>
+  
+          <button onclick="login()" class="btn-login">Log In</button>
+          <a href="signup.html">No account? Sign up</a>
         </div>
-
-        <button onclick="login()" class="btn-login">Log In</button>
-        <a href="signup.html">No account? Sign up</a>
       </div>
-    </div>
+    </main>
 
     <script src="scripts/index.js"></script>
   </body>

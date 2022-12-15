@@ -19,7 +19,6 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
 }
 
 /* ---------- Nav ---------- */
@@ -40,10 +39,11 @@ nav {
   font-size: 30px;
   background-color: transparent;
   transition: 500ms ease-in-out;
+  color: black;
 }
 
 .nav-links a:hover {
-  background-color: #c2d6ff;
+  background-color: var(--highlight);
   box-shadow: 0 0 4px #b1caff;
 }
 
@@ -78,7 +78,6 @@ main {
 
 .call-to-action p,
 .subtitle {
-  color: black;
   font-size: 200%;
 }
 
@@ -114,7 +113,7 @@ main {
 }
 
 .call-to-action-btn:hover {
-  background-color: #c2d6ff;
+  background-color: var(--highlight);
   box-shadow: 0 0 4px #b1caff;
 }
 

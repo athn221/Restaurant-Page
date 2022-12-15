@@ -267,6 +267,8 @@ function removeItem(item) {
 
 updateCart();
 
+
+
 /* ---------- Login Signup + Admin Login Signup ---------- */
 
 function signup() {
@@ -307,6 +309,8 @@ function login() {
 		alert('Incorrect info submitted.');
 	}
 }
+
+
 
 /* ---------- Admin Controls ---------- */
 
@@ -375,6 +379,8 @@ function adminAddItems() {
 
 adminMenu();
 
+
+
 /* ---------- Checkout ---------- */
 
 function toCheckout() {
@@ -388,5 +394,3 @@ function toCheckout() {
 	}
 	window.location.href = 'checkout.html';
 }
-
-/* ---------- Order Completion ---------- */

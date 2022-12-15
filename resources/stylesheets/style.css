@@ -1,10 +1,13 @@
 /* ---------- Global ---------- */
 
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Jost:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #eae8ff;
-  --secondary-color: #d3e1ff;
+  --primary-color: #F4F1DE;
+  --secondary-color: #81B29A;
+  --tertiary-color: #E07A5F;
+  --highlight: #F2CC8F;
+  --dark: #3D405B;
 }
 
 @keyframes slide-in {
@@ -31,13 +34,33 @@ html {
 body {
   height: 100%;
   width: 100%;
+  background-color: var(--primary-color);
+  font-size: 18px;
+  line-height: 2em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: var(--dark)
 }
+
 
 /* ---------- Elements ---------- */
 
 a {
-  text-decoration: none;
+  text-decoration-color: transparent;
+  color: var(--dark);
+  transition: 400ms;
 }
+
+a:hover {
+  color: #25273C;
+  text-decoration-color: #25273C;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+
 
 /* ---------- Navbar ---------- */
 
@@ -70,7 +93,9 @@ nav {
   z-index: 10;
 }
 
-/* ----- Grid ----- */
+
+
+/* ---------- Grid ---------- */
 
 .grid-container {
   display: grid;
@@ -78,7 +103,10 @@ nav {
   gap: 20px;
 }
 
-/* ----- Header ----- */
+
+
+
+
 
 /* ---------- Footer ---------- */
 
@@ -90,77 +118,55 @@ footer {
   background-color: #252627;
 }
 
-.fb:link {
-  color: #004773;
-}
-
+.fb:link,
 .fb:visited {
   color: #004773;
 }
 
-.fb:hover {
+.fb:hover,
+.fb:active {
   color: #0068a9;
   transition: 0.2s;
 }
 
-.fb:active {
-  color: #0068a9;
-}
-
-.twt:link {
-  color: #1da1f2;
-}
-
+.twt:link,
 .twt:visited {
   color: #1da1f2;
 }
 
-.twt:hover {
-  color: #63c3ff;
-  transition: 0.2s;
-}
-
+.twt:hover,
 .twt:active {
   color: #63c3ff;
-}
-
-.gp:link {
-  color: #ae1100;
   transition: 0.2s;
 }
 
+.gp:link,
 .gp:visited {
   color: #ae1100;
-}
-
-.gp:hover {
-  color: #f01800;
   transition: 0.2s;
 }
 
+.gp:hover,
 .gp:active {
   color: #f01800;
-}
-
-.ig:link {
-  color: #c90072;
   transition: 0.2s;
 }
 
+.ig:link,
 .ig:visited {
   color: #c90072;
+  transition: 0.2s;
 }
 
-.ig:hover {
+.ig:hover,
+.ig:active {
   color: #fffa70;
   transition: 0.2s;
 }
 
-.ig:active {
-  color: #fffa70;
-}
 
-/* ----- Admin Mechanics ----- */
+
+/* ---------- Admin Mechanics ---------- */
 
 #div-add-items {
   display: flex;
@@ -197,11 +203,9 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 2px 0;
 }
 
-h3 {
-  font-size: 30px;
-}
 
 .menu-tag {
   display: flex;
@@ -213,20 +217,36 @@ h3 {
   font-size: 25px;
 }
 
-/* ---------- About ---------- */
-
 /* ---------- Login Sign up ---------- */
 
 /* sign up */
-form {
-  background-color: rgb(249, 249, 249);
+
+.sign-up-in-main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-sign-up-in {
   width: 500px;
-  height: 300px;
+}
+
+input {
+  width: 500px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  color: var(--dark);
 }
 
 .form-container {
   display: flex;
   justify-content: center;
+  background-color: var(--secondary-color);
+  padding: 25px 35px;
+  border-radius: 10px;
+  height: fit-content;
 }
 
 .form-content {
@@ -239,18 +259,7 @@ form {
   margin-bottom: 5%;
 }
 
-/* log in */
 
-.login-container {
-  display: flex;
-  justify-content: center;
-}
-
-/* boffum? */
-
-input {
-  width: 500px;
-}
 
 /* ---------- Cart ---------- */
 

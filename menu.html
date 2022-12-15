@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/stylesheets/style.css">
+    <title>Customer Menu</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div>
+                <a href="index.html">Home Page/Sign Out</a>
+                <a href="signup.html">Registration Page</a>
+            </div>
+        </div>
+
+        <div class="user-cart">
+            <button id="btn-cart" onclick="shoppingCart()">
+                <ion-icon class="icon-cart" name="cart-outline"></ion-icon>
+            </button>
+            <div class="shopping-cart" id="cart"">
+                
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3 class="menu-name">sushi 1</h3>
+                        <span class="menu-description">A fine piece of sushi with rice and fish wrapped in kelp.</span>
+                    </div>
+                    <div class="menu-tag">
+                        <span class="menu-price">$52.99</span>
+                        <button class="BTN-ADD" onclick="">ADD TO CART</button>
+                    </div>
+                    <button class="BTN-REMOVE" type="button">REMOVE</button>
+                </div>
+
+                <div class="cart-total">
+                    <strong class="cart-tax-title">Tax</strong>
+                    <span class="cart-total-tax">6%</span>
+                    <br>
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">$52.99</span>
+                    <button onclick="toCheckout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="menu-sect">
+
+        <div class="menu-container grid-container" id="menu-container-id">
+            <div class="food-section"></div>
+            <div class="food-section"></div>
+            <div class="food-section"></div>
+            <div class="food-section"></div>
+            <div class="food-section"></div>            
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-nav-bar">
+                <a href="#">Contact</a>
+                <a href="#">Rating</a>
+                <a href="#">ABCXYZ</a>
+                <a href="#">DEFUVW</a>
+                <a href="#">GHIRST</a>
+            </div>
+        </div>
+
+        <div class="footer-columns">
+            <div class="footer-social-media-links">
+                <a class="fb" href="">
+                    <ion-icon class="icons-social" name="logo-facebook"></ion-icon>
+                </a>
+                <a class="twt" href="">
+                    <ion-icon class="icons-social" name="logo-twitter"></ion-icon>
+                </a>
+                <a class="gp" href="">
+                    <ion-icon class="icons-social" name="logo-google"></ion-icon>
+                </a>
+                <a class="ig" href="">
+                    <ion-icon class="icons-social" name="logo-instagram"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+/* ---------- Reset ---------- */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ---------- Nav ---------- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: .8em 8%;
+}
+
+.nav-links a {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 25px;
+  font-family: "Indie Flower", cursive;
+  font-size: 30px;
+  background-color: transparent;
+  transition: 500ms ease-in-out;
+  color: black;
+}
+
+.nav-links a:hover {
+  background-color: var(--highlight);
+  box-shadow: 0 0 4px #b1caff;
+}
+
+/* ---------- Main ---------- */
+
+main {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "top-left top-right" "bottom-left bottom-right";
+}
+
+.hero-image {
+  grid-area: top-left;
+  width: 60%;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 4px var(--tertiary-color);
+}
+
+.hero {
+  grid-area: top-right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 50px;
+  line-height: 1.2em;
+}
+
+.call-to-action p,
+.subtitle {
+  font-size: 200%;
+}
+
+.sushi-cta-image {
+  grid-area: bottom-right;
+  margin: auto;
+  height: 50%;
+}
+
+.call-to-action {
+  grid-area: bottom-left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
+  height: 100%;
+}
+
+.call-to-action-container {
+  height: 80px;
+  align-items: center;
+}
+
+.call-to-action-btn {
+  height: 75px;
+  display: block;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 25px;
+  font-family: "Indie Flower", cursive;
+  font-size: 40px;
+  background-color: transparent;
+  transition: 500ms ease-in-out;
+}
+
+.call-to-action-btn:hover {
+  background-color: var(--highlight);
+  box-shadow: 0 0 4px #b1caff;
+}
+
+.blush {
+  grid-area: bottom-left;
+  width: 20px;
+  height: 5px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: rgba(240, 128, 128, 0.541);
+  box-shadow: 0 0 3px lightcoral;
+  display: hidden;
+  pointer-events: none;
+}
+
+.blush-left {
+  transform: rotate(18deg);
+  position: relative;
+  top: -35%;
+  left: 10%;
+}
+
+.blush-right {
+  transform: rotate(-18deg);
+  position: relative;
+  top: -55%;
+  left: 58%;
+}

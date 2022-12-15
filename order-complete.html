@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="resources/stylesheets/style.css" />
+    <link rel="stylesheet" href="resources/stylesheets/home-style.css" />
+    <link rel="stylesheet" href="resources/stylesheets/order-style.css">
+    <title>Order Complete!</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="resources/images/client-assets/sushi-baka-logo.png" alt="" />
+      </div>
+      <div class="nav-links">
+        <a href="index.html">sign out</a>
+      </div>
+    </nav>
+    <main class="order-main">
+      <div class="order-message">
+        <h2>Your order is in!</h2>
+        <p>We'll start <i>maki</i>-ing your order soon</p>
+        <img src="" alt="" />
+      </div>
+      <div class="order-receipt">
+        <div class="receipt-head">
+          <span class="receipt-date"></span>
+          <span class="receipt-time"></span>
+          <span class="receipt-checkout-time"></span>
+          <span class="receipt-name"></span>
+          <span class="receipt-payment-method"></span>
+        </div>
+        <div class="receipt-body">
+          <div class="receipt-items-purchased"></div>
+        </div>
+        <div class="receipt-totals">
+          <span class="receipt-subtotal"></span>
+          <span class="receipt-tax"></span>
+          <span class="receipt-tip"></span>
+          <span class="receipt-total"></span>
+        </div>
+      </div>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/home.js"></script>
+    <script src="scripts/order-complete.js"></script>
+  </body>
+</html>

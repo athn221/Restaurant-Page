@@ -1,0 +1,104 @@
+/* ---------- Reset ---------- */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  font-size: 16px;
+  line-height: 2em;
+}
+
+p {
+  color: initial;
+  font-size: initial;
+}
+
+form {
+  background-color: transparent;
+  height: auto;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+/* ---------- Checkout ---------- */
+
+.checkout-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 100px 10%;
+  width: 80%;
+  height: 80%;
+}
+
+/* ---------- Payment Options ---------- */
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: fit-content;
+  margin-right: 5px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.card-info {
+  width: 80%;
+  margin: 25px 0;
+}
+
+.payment-options {
+  margin: 50px 0;
+}
+
+.card-tip {
+  margin-top: 50px;
+}
+
+.tip-other {
+  display: flex;
+}
+
+/* * this is making sure firefox doesn't show arrows in the textbox */
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.checkout-greeting p {
+  font-size: 1.5em;
+}
+
+.card-tip label {
+  justify-content: start;
+  width: 160px;
+}
+
+#tip-other {
+  width: 70px;
+  margin-left: 12px;
+}
+
+.tip-other label {
+  width: fit-content;
+}

@@ -1,5 +1,300 @@
+/* ---------- Global ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #F4F1DE;
+  --secondary-color: #81B29A;
+  --tertiary-color: #E07A5F;
+  --highlight: #F2CC8F;
+  --dark: #3D405B;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  font-size: 18px;
+  line-height: 2em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: var(--dark)
+}
+
+
+/* ---------- Elements ---------- */
+
+a {
+  text-decoration-color: transparent;
+  color: var(--dark);
+  transition: 400ms;
+}
+
+a:hover {
+  color: #25273C;
+  text-decoration-color: #25273C;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+
+
+/* ---------- Navbar ---------- */
+
+nav {
+  width: 100%;
+  display: flex;
+  place-content: center;
+}
+
+#btn-cart {
+  border-style: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.icon-cart {
+  font-size: 300%;
+}
+
+.shopping-cart {
+  display: none;
+}
+
+.sliding-cart {
+  position: absolute;
+  height: 75%;
+  width: 25%;
+  background-color: rgb(250, 248, 248);
+  animation: slide-in 0.5s both;
+  z-index: 10;
+}
+
+
+
+/* ---------- Grid ---------- */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+
+
+
+
+
+/* ---------- Footer ---------- */
+
+footer {
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #252627;
+  height: 60px;
+}
+
+.fb:link,
+.fb:visited {
+  color: #004773;
+}
+
+.fb:hover,
+.fb:active {
+  color: #0068a9;
+  transition: 0.2s;
+}
+
+.twt:link,
+.twt:visited {
+  color: #1da1f2;
+}
+
+.twt:hover,
+.twt:active {
+  color: #63c3ff;
+  transition: 0.2s;
+}
+
+.gp:link,
+.gp:visited {
+  color: #ae1100;
+  transition: 0.2s;
+}
+
+.gp:hover,
+.gp:active {
+  color: #f01800;
+  transition: 0.2s;
+}
+
+.ig:link,
+.ig:visited {
+  color: #c90072;
+  transition: 0.2s;
+}
+
+.ig:hover,
+.ig:active {
+  color: #fffa70;
+  transition: 0.2s;
+}
+
+
+
+/* ---------- Admin Mechanics ---------- */
+
+#div-add-items {
+  display: flex;
+  flex-direction: column;
+}
+
+#admin-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+#admin-remove-section {
+  padding: 1%;
+  background-color: rgb(226, 226, 226);
+}
+
+#admin-add-section {
+  padding: 1%;
+  background-color: rgb(226, 226, 226);
+}
+
+/* ---------- Menu ---------- */
+
+.menu-container {
+  margin: 100px;
+}
+
+.menu-item {
+  padding: 20px 30px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px 0;
+}
+
+
+.menu-tag {
+  display: flex;
+  place-items: center;
+  gap: 20px;
+}
+
+.menu-price {
+  font-size: 25px;
+}
+
+/* ---------- Login Sign up ---------- */
+
+/* sign up */
+
+.sign-up-in-main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-sign-up-in {
+  width: 500px;
+}
+
+input {
+  width: 500px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  color: var(--dark);
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  padding: 25px 35px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+#email, #username, #password, #password-confirm {
+  margin-bottom: 5%;
+}
+
+
+
+/* ---------- Cart ---------- */
+
+#cart {
+  height: fit-content;
+}
+
+#cart > .menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#cart > .menu-item > .menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+#cart h3 {
+  font-size: 20px;
+}
+
+#cart p,
+#cart span {
+  font-size: 14px;
+}
+
+#cart input {
+  width: 50px;
+}
+
+.cart-total {
+  padding: 20px 30px;
 }

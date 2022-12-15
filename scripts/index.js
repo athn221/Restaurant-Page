@@ -284,6 +284,7 @@ function signup() {
 			localStorage.setItem('email', email);
 			localStorage.setItem('username', username);
 			localStorage.setItem('password', password);
+			window.location.href = 'menu.html';
 		}
 	} else {
 		alert("Passwords don't match");

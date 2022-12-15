@@ -1,33 +1,33 @@
 main {
-    height: 80vh;
+  height: 80vh;
 }
 
 main > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .receipt-head {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
-    margin-top: 60px;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  margin-top: 60px;
+  height: 100%;
 }
 
 .receipt-body {
-    margin-top: 60px;
-    margin: auto;
+  margin-top: 60px;
+  margin: auto;
 }
 
 .receipt-totals {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 60px;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 60px;
+  height: 100%;
 }

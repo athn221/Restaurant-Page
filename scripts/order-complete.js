@@ -8,11 +8,13 @@ let cardInfo = JSON.parse(localStorage.getItem('cardInfo'));
 let paymentMethod = localStorage.getItem('paymentMethod');
 
 // display the date, time, the checkout time, the customer name, and the payment method
-$('.receipt-date').text("Date: " + date);
-$('.receipt-time').text("Time: " + time);
-$('.receipt-checkout-time').text("Minutes taken to complete order: " + `${minutes}:${seconds}`);
-$('.receipt-name').text("Name: " + cardInfo.cardName);
-$('.receipt-payment-method').text("Payment Method: " + paymentMethod);
+$('.receipt-date').text('Date: ' + date);
+$('.receipt-time').text('Time: ' + time);
+$('.receipt-checkout-time').text(
+	'Minutes taken to complete order: ' + `${minutes}:${seconds}`,
+);
+$('.receipt-name').text('Name: ' + cardInfo.cardName);
+$('.receipt-payment-method').text('Payment Method: ' + paymentMethod);
 
 // if the payment method is card, show the last 4 digits of the card number
 if (paymentMethod === 'card') {
@@ -39,7 +41,7 @@ for (let i = 0; i < cartItems.length; i++) {
 }
 
 // display the subtotal, tax, tip and total
-$('.receipt-subtotal').text("Subtotal: " + localStorage.getItem('subtotal'));
-$('.receipt-tax').text("Tax: " + localStorage.getItem('tax'));
-$('.receipt-tip').text("Tip: " + localStorage.getItem('tip'));
-$('.receipt-total').text("Total: " + localStorage.getItem('total'));
+$('.receipt-subtotal').text('Subtotal: ' + localStorage.getItem('subtotal'));
+$('.receipt-tax').text('Tax: ' + localStorage.getItem('tax'));
+$('.receipt-tip').text('Tip: ' + localStorage.getItem('tip'));
+$('.receipt-total').text('Total: ' + localStorage.getItem('total'));

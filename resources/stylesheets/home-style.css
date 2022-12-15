@@ -28,7 +28,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: var(--secondary-color);
-  padding: .8em 8%;
+  padding: 0.8em 8%;
 }
 
 .nav-links a {

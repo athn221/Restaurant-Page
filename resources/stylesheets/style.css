@@ -1,13 +1,13 @@
 /* ---------- Global ---------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #F4F1DE;
-  --secondary-color: #81B29A;
-  --tertiary-color: #E07A5F;
-  --highlight: #F2CC8F;
-  --dark: #3D405B;
+  --primary-color: #f4f1de;
+  --secondary-color: #81b29a;
+  --tertiary-color: #e07a5f;
+  --highlight: #f2cc8f;
+  --dark: #3d405b;
 }
 
 @keyframes slide-in {
@@ -37,11 +37,10 @@ body {
   background-color: var(--primary-color);
   font-size: 18px;
   line-height: 2em;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 600;
-  color: var(--dark)
+  color: var(--dark);
 }
-
 
 /* ---------- Elements ---------- */
 
@@ -52,15 +51,13 @@ a {
 }
 
 a:hover {
-  color: #25273C;
-  text-decoration-color: #25273C;
+  color: #25273c;
+  text-decoration-color: #25273c;
 }
 
 h3 {
   font-size: 30px;
 }
-
-
 
 /* ---------- Navbar ---------- */
 
@@ -93,8 +90,6 @@ nav {
   z-index: 10;
 }
 
-
-
 /* ---------- Grid ---------- */
 
 .grid-container {
@@ -102,11 +97,6 @@ nav {
   grid-template-columns: 1fr;
   gap: 20px;
 }
-
-
-
-
-
 
 /* ---------- Footer ---------- */
 
@@ -166,8 +156,6 @@ footer {
   transition: 0.2s;
 }
 
-
-
 /* ---------- Admin Mechanics ---------- */
 
 #div-add-items {
@@ -208,7 +196,6 @@ footer {
   margin: 2px 0;
 }
 
-
 .menu-tag {
   display: flex;
   place-items: center;
@@ -236,7 +223,7 @@ footer {
 
 input {
   width: 500px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   font-size: 1em;
   color: var(--dark);
@@ -257,11 +244,12 @@ input {
   width: fit-content;
 }
 
-#email, #username, #password, #password-confirm {
+#email,
+#username,
+#password,
+#password-confirm {
   margin-bottom: 5%;
 }
-
-
 
 /* ---------- Cart ---------- */
 

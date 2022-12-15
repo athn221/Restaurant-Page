@@ -107,6 +107,21 @@ function storeCardData() {
 }
 
 $('.checkout-btn').click(function () {
+	if (paymentMethod === 'cash') {
+		checkoutTime();
+		toOrderComplete();
+	}
+	if (paymentMethod === 'card') {
+		if (validateCardForm()) {
+			$('#checkout-form').submit(storeCardData());
+			checkoutTime();
+			toOrderComplete();
+		} else {
+			console.log('error');
+		}
+	} else {
+		$('#checkout-form').submit();
+	}
 	if (paymentMethod === 'card') {
 		if (validateCardForm()) {
 			$('#checkout-form').submit(storeCardData());
